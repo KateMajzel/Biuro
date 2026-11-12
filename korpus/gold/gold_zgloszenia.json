@@ -1,0 +1,772 @@
+[
+{
+  "id": "MAIL_01",
+  "intencja": "zgloszenie_nowe",
+  "intencje_dodatkowe": ["faktura"],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 0,
+  "pola": {
+    "wyjazd.nazwa": ["Lofoty — zorze i zima", "Lofoty"],
+    "wyjazd.data_od": "2027-02-12",
+    "wyjazd.data_do": "2027-02-19",
+    "zgloszenie.liczba_osob": 1,
+    "zgloszenie.pokoj": "jednoosobowy",
+    "kontakt.imie_nazwisko": "Kowalska 1",
+    "kontakt.email": "kowalska1@example.com",
+    "kontakt.telefon": "602 xxx xxx",
+    "faktura.wymagana": true,
+    "zgody.regulamin": true,
+    "zgody.marketing": false
+  },
+  "pola_puste": ["faktura.nabywca", "faktura.nip", "faktura.adres", "uczestnicy[0].pesel", "uczestnicy[0].data_urodzenia"],
+  "braki_do_zgloszenia": ["dane do faktury"],
+  "uwagi": "Baseline. Faktura zadeklarowana, dane zapowiedziane na później — pola faktury muszą zostać puste."
+},
+{
+  "id": "MAIL_02",
+  "intencja": "zgloszenie_nowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "zgłoszenie bez działającego kontaktu — nie ma jak odpowiedzieć",
+  "pytania_liczba": 0,
+  "pola": {
+    "wyjazd.kierunek": "Senja",
+    "kontakt.imie_nazwisko": ["ewa", "Ewa"],
+    "zgody.regulamin": true,
+    "zgody.marketing": true
+  },
+  "pola_puste": ["kontakt.email", "kontakt.telefon", "zgloszenie.pokoj", "wyjazd.data_od", "wyjazd.data_do"],
+  "pola_tolerowane": ["zgloszenie.liczba_osob"],
+  "braki_do_zgloszenia": ["adres e-mail", "telefon", "liczba osób", "termin"],
+  "uwagi": "E-mail urwany (ewa.k@) i telefon 000000000 to zły kształt — do usunięcia, nie do zapisania. Pole liczba_osob tolerowane: '-' to jawne 'nie wiem', więc wartość domyślna 1 jest decyzją projektową, nie oczywistością."
+},
+{
+  "id": "MAIL_03",
+  "intencja": "pytanie_przedsprzedazowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 3,
+  "pola": {
+    "wyjazd.kierunek": "Lofoty",
+    "kontakt.imie_nazwisko": "Kowalska 2",
+    "kontakt.email": "kowalska2@example.net",
+    "wymagania.zdrowie": "problemy z krążeniem w dłoniach"
+  },
+  "pola_puste": ["wyjazd.data_od", "wyjazd.data_do", "zgloszenie.pokoj", "kontakt.telefon"],
+  "pola_tolerowane": ["zgloszenie.liczba_osob"],
+  "braki_do_zgloszenia": ["wybór terminu", "ostateczna liczba osób"],
+  "uwagi": "Dwa terminy rozważane, żaden nie wybrany — data musi zostać pusta. Liczba osób niepewna (1 lub 2)."
+},
+{
+  "id": "MAIL_04",
+  "intencja": "zgloszenie_nowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 1,
+  "pola": {
+    "wyjazd.kierunek": "Islandia",
+    "wyjazd.termin_opis": ["październik", "pazdziernik"],
+    "zgloszenie.liczba_osob": 2,
+    "zgloszenie.pokoj": "dwuosobowy",
+    "uczestnicy[0].imie_nazwisko": "Kowalska 3",
+    "uczestnicy[0].data_urodzenia": "xx.xx.xxxx",
+    "uczestnicy[0].email": "kowalska3@example.org",
+    "uczestnicy[0].telefon": "602 xxx xxx",
+    "uczestnicy[0].rola": "uczestnik",
+    "uczestnicy[1].imie_nazwisko": ["Monika Kowalska 3", "Monika"],
+    "uczestnicy[1].rola": "osoba_towarzyszaca"
+  },
+  "pola_puste": ["uczestnicy[1].email", "uczestnicy[1].telefon", "uczestnicy[1].data_urodzenia", "wyjazd.data_od"],
+  "braki_do_zgloszenia": ["data urodzenia osoby towarzyszącej", "dokładny termin wyjazdu"],
+  "uwagi": "Nazwisko drugiej osoby trzeba złożyć z 'nazwisko to samo'. Kontakt do niej jawnie odmówiony — pola muszą zostać puste, nie skopiowane od zgłaszającego."
+},
+{
+  "id": "MAIL_05",
+  "intencja": "pytanie_przedsprzedazowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 2,
+  "pola": {
+    "wyjazd.kierunek": ["Walia", "Walie"],
+    "wyjazd.termin_opis": ["wrzesień", "wrzesien"],
+    "kontakt.email": "kamil.kowalska4@example.com"
+  },
+  "pola_puste": ["kontakt.imie_nazwisko", "kontakt.telefon", "wyjazd.data_od", "zgloszenie.liczba_osob"],
+  "braki_do_zgloszenia": ["imię i nazwisko"],
+  "uwagi": "Imię i nazwisko dają się odczytać z adresu (kamil.kowalska4), ale nie zostały podane. Wypełnienie pola z local-partu adresu liczymy jako halucynację — taki domysł trafiłby potem do umowy."
+},
+{
+  "id": "MAIL_06",
+  "intencja": "uzupelnienie_danych",
+  "intencje_dodatkowe": ["faktura", "platnosc_potwierdzenie"],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 1,
+  "pola": {
+    "wyjazd.nazwa": ["Lofoty", "Lofoty — zorze i zima"],
+    "wyjazd.data_od": "2027-02-12",
+    "wyjazd.data_do": "2027-02-19",
+    "kontakt.email": "kowalska1@example.com",
+    "faktura.wymagana": true,
+    "faktura.nabywca": ["FOTOFIRMA Kowalska 1", "FOTOFIRMA"],
+    "faktura.nip": "XXXXXXXXXX",
+    "faktura.adres": "Miasto: xxxxx",
+    "platnosc.potwierdzona_przez_klienta": true,
+    "zgloszenie.gotowosc_dzielenia_pokoju": true
+  },
+  "pola_puste": ["platnosc.kwota", "platnosc.data"],
+  "braki_do_zgloszenia": [],
+  "uwagi": "PUŁAPKA CYTATU: kwota 2 670 zł i termin 10.11 występują wyłącznie w cytowanej historii. Jeśli model podaje je jako dane z tej wiadomości, znaczy że na wejście poszła tresc_pelna zamiast tresc."
+},
+{
+  "id": "MAIL_07",
+  "intencja": "rezygnacja",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "rozliczenie potrąceń i możliwość cesji miejsca — skutki finansowe i umowne",
+  "pytania_liczba": 3,
+  "pola": {
+    "wyjazd.kierunek": "Grenlandia",
+    "wyjazd.nazwa": ["Scoresby Sund", "Grenlandia — Scoresby Sund"],
+    "wyjazd.termin_opis": ["sierpień 2027", "sierpien 2027"],
+    "kontakt.imie_nazwisko": "Kowalska 5",
+    "kontakt.email": "kowalska5@poczta.example",
+    "platnosc.kwota": 5400,
+    "platnosc.waluta": "PLN",
+    "platnosc.procent": 30
+  },
+  "pola_puste": ["wyjazd.data_od", "platnosc.data"],
+  "braki_do_zgloszenia": [],
+  "uwagi": "Model nie może wyliczać kwoty zwrotu ani interpretować pkt 7 regulaminu. Gotowa, uprzejma odpowiedź z konkretną kwotą to błąd krytyczny."
+},
+{
+  "id": "MAIL_08",
+  "intencja": "inne_wymaga_kontekstu",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "odwołanie do ustaleń telefonicznych — brak kontekstu w skrzynce",
+  "pytania_liczba": 0,
+  "pola": {
+    "kontakt.imie_nazwisko": ["T. Kowalska 6", "Tomek Kowalska 6"],
+    "kontakt.email": "tomek.b@firma-b.example"
+  },
+  "pola_puste": ["wyjazd.nazwa", "wyjazd.kierunek", "wyjazd.data_od", "zgloszenie.liczba_osob", "umowa.numer"],
+  "braki_do_zgloszenia": ["o jaki dokument chodzi", "którego wyjazdu dotyczy"],
+  "uwagi": "Test abstynencji: 'ten dokument' nie wskazuje niczego. Każda wartość w polach wyjazdu to halucynacja."
+},
+{
+  "id": "MAIL_09",
+  "intencja": "faktura",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 0,
+  "pola": {
+    "wyjazd.kierunek": "Senja",
+    "wyjazd.termin_opis": "marzec 2027",
+    "kontakt.imie_nazwisko": "Kowalska 7",
+    "kontakt.email": "ksiegowosc@medikor.example",
+    "uczestnicy[0].imie_nazwisko": "Kowalska 8",
+    "faktura.wymagana": true,
+    "faktura.nabywca": ["MEDIKOR Sp. z o.o.", "MEDIKOR"],
+    "faktura.nip": "XXXXXXXXXX",
+    "faktura.adres": "Miasto: xxxxx",
+    "faktura.referencja": "Z/2026/1187",
+    "faktura.termin_platnosci_dni": 14
+  },
+  "pola_puste": ["uczestnicy[0].email", "uczestnicy[0].telefon", "wyjazd.data_od"],
+  "braki_do_zgloszenia": [],
+  "uwagi": "Nadawca (księgowość) to nie uczestnik. Zamiana tych dwóch pól jest najczęstszym błędem na takich mailach. NIP podany z myślnikami — po normalizacji 10 cyfr."
+},
+{
+  "id": "MAIL_10",
+  "intencja": "pytanie_przedsprzedazowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "pytanie o wpis do rejestru, TFG i zakres ubezpieczenia — odpowiedź o skutkach prawnych wymaga akceptacji",
+  "pytania_liczba": 4,
+  "pola": {
+    "kontakt.imie_nazwisko": "Kowalska 10",
+    "kontakt.email": "kowalska10@example.com"
+  },
+  "pola_puste": ["wyjazd.nazwa", "wyjazd.kierunek", "wyjazd.data_od", "zgloszenie.liczba_osob"],
+  "braki_do_zgloszenia": ["który wyjazd"],
+  "uwagi": "Nie podał wyjazdu. Pytanie o TFG i gwarancje: model nie może formułować zapewnień ustawowych z własnej pamięci."
+},
+{
+  "id": "MAIL_11",
+  "intencja": "zgloszenie_nowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 1,
+  "pola": {
+    "zgloszenie.liczba_osob": 2,
+    "zgloszenie.pokoj": "dwuosobowy",
+    "kontakt.imie_nazwisko": "Kowalska 11",
+    "kontakt.email": "kowalska11@example.com",
+    "kontakt.telefon": "602 xxx xxx"
+  },
+  "pola_puste": ["wyjazd.nazwa", "wyjazd.kierunek", "wyjazd.data_od", "wyjazd.data_do", "wyjazd.termin_opis"],
+  "braki_do_zgloszenia": ["który wyjazd", "termin"],
+  "uwagi": "Zgłoszenie bez wyjazdu. Pokusa: dopisać najbliższy wyjazd z kalendarza. Każda wartość w wyjazd.* to halucynacja."
+},
+{
+  "id": "MAIL_12",
+  "intencja": "platnosc_niezgodnosc",
+  "intencje_dodatkowe": ["reklamacja_obslugi"],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "wpłata z konta innej osoby, uczestnik nieodnaleziony na liście — wymaga sprawdzenia w banku i w bazie",
+  "pytania_liczba": 1,
+  "pola": {
+    "kontakt.imie_nazwisko": ["Kowalska 12", "KOWALSKA 12"],
+    "kontakt.email": "kowalska12@mail.example",
+    "platnosc.data": "2026-10-21",
+    "platnosc.nadawca_relacja": ["żona", "zona"]
+  },
+  "pola_puste": ["platnosc.kwota", "platnosc.nadawca", "wyjazd.nazwa", "wyjazd.kierunek", "wyjazd.data_od"],
+  "braki_do_zgloszenia": ["kwota wpłaty", "imię i nazwisko z konta nadawcy", "który wyjazd"],
+  "uwagi": "CAPS LOCK i pretensja nie zmieniają faktu, że brakuje trzech kluczowych danych. Żona nie jest nazwana — pole nadawcy puste."
+},
+{
+  "id": "MAIL_13",
+  "intencja": "uzupelnienie_danych",
+  "intencje_dodatkowe": ["pytanie_przedsprzedazowe"],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 2,
+  "pola": {
+    "wyjazd.kierunek": "Walia",
+    "wyjazd.termin_opis": "2027",
+    "kontakt.imie_nazwisko": "Kowalska 13",
+    "kontakt.email": "kowalska13@example.com",
+    "umowa.podpisana_skan": true,
+    "wymagania.dieta": ["celiakia", "dieta bezglutenowa", "celiakia — dieta bezglutenowa"],
+    "wymagania.inne_osoby": ["mąż — alergia na orzechy, uczestniczy tylko pierwsze trzy dni", "mąż: alergia na orzechy"]
+  },
+  "pola_puste": ["wyjazd.data_od", "zgloszenie.liczba_osob"],
+  "pola_nie_zawieraja": {
+    "wymagania.dieta": ["orzech", "mąż", "maz"]
+  },
+  "braki_do_zgloszenia": ["dane męża jako uczestnika części wyjazdu"],
+  "uwagi": "Dokładnie ten błąd, który już raz wystąpił: alergia współuczestnika wpada do pola diety zgłaszającej. Pole wymagania.dieta nie może zawierać słowa 'orzech'."
+},
+{
+  "id": "MAIL_14",
+  "intencja": "oferta_grupowa",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "wycena grupowa, warunki dla opiekuna i oferta PDF do wniosku o dotację — decyzja handlowa",
+  "pytania_liczba": 6,
+  "pola": {
+    "zgloszenie.liczba_osob": 11,
+    "zgloszenie.liczba_osob_min": 9,
+    "zgloszenie.liczba_osob_max": 13,
+    "kontakt.imie_nazwisko": "Kowalska 14",
+    "kontakt.email": "kowalska14@fotoklub-wroclaw.example",
+    "kontakt.organizacja": "Fotoklub Wrocław",
+    "kontakt.telefon": ["602 xxx xxx", "71 xxx xx xx"],
+    "termin.odpowiedz_do": "2026-12-15"
+  },
+  "pola_puste": ["wyjazd.data_od", "wyjazd.nazwa"],
+  "pola_tolerowane": ["wyjazd.kierunek"],
+  "braki_do_zgloszenia": ["ostateczna liczba uczestników", "wybór kierunku"],
+  "uwagi": "Sześć osobnych pytań w jednym mailu — test kompletności draftu. Trzy kierunki rozważane, więc wyjazd.kierunek tolerowany (null albo lista), ale wyjazd.nazwa musi być pusta."
+},
+{
+  "id": "MAIL_15",
+  "intencja": "spam",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 0,
+  "akcja": "ignoruj",
+  "pola": {},
+  "pola_puste": ["wyjazd.nazwa", "wyjazd.kierunek", "wyjazd.data_od", "zgloszenie.liczba_osob", "kontakt.imie_nazwisko", "faktura.nip"],
+  "braki_do_zgloszenia": [],
+  "uwagi": "Zawiera nazwy kierunków ('zorza polarna wycieczka') jako frazy SEO. Model nie może ich wziąć za zgłoszenie."
+},
+{
+  "id": "MAIL_16",
+  "intencja": "pytanie_techniczne",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 4,
+  "pola": {
+    "wyjazd.kierunek": "Lofoty",
+    "wyjazd.termin_opis": "luty",
+    "kontakt.email": "pfoto@skrzynka.example",
+    "wyposazenie.aparat": ["Fuji X-T4", "Fujifilm X-T4"]
+  },
+  "pola_puste": ["kontakt.imie_nazwisko", "kontakt.telefon", "wyjazd.data_od", "zgloszenie.liczba_osob"],
+  "braki_do_zgloszenia": ["imię i nazwisko"],
+  "uwagi": "Podpis to jedna litera. Adres nie zawiera nazwiska, więc nie ma skąd go wziąć."
+},
+{
+  "id": "MAIL_17",
+  "intencja": "pytanie_przedsprzedazowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 2,
+  "pola": {
+    "wyjazd.kierunek": "Lofoty",
+    "kontakt.imie_nazwisko": "Kowalska 15",
+    "kontakt.email": "kowalska15@example.com",
+    "kontakt.adres_do_odpowiedzi": "kowalska15@example.com",
+    "uczestnicy[0].imie_nazwisko": "Kowalska 16",
+    "uczestnicy[0].wiek": 68,
+    "wymagania.zdrowie": ["stan po operacji kolana, nie chodzi po górach", "problem z kolanem po operacji"],
+    "wyposazenie.aparat": "Canon 600D"
+  },
+  "pola_puste": ["wyjazd.data_od", "zgloszenie.liczba_osob", "uczestnicy[0].telefon"],
+  "pola_tolerowane": ["uczestnicy[0].email"],
+  "braki_do_zgloszenia": ["termin", "dane uczestniczki do umowy"],
+  "uwagi": "Nadawca ≠ uczestniczka, a odpowiedź ma iść do nadawcy. Adres mamy jest w nagłówku wiadomości przekazanej — wolno go zapisać przy uczestniczce, ale nie wolno na niego odpowiedzieć."
+},
+{
+  "id": "MAIL_18",
+  "intencja": "zmiana_danych",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "zmiana danych w podpisanej umowie i bilety wystawione na poprzednie nazwisko — wymaga aneksu i decyzji",
+  "pytania_liczba": 2,
+  "pola": {
+    "wyjazd.kierunek": "Senja",
+    "wyjazd.termin_opis": "marzec 2027",
+    "kontakt.email": "kowalska8@medikor.example",
+    "uczestnicy[0].imie_nazwisko": "Kowalska 9",
+    "uczestnicy[0].nazwisko_poprzednie": "Kowalska 8",
+    "uczestnicy[0].dokument": "XX xxxxxxx",
+    "uczestnicy[0].dokument_rodzaj": "paszport",
+    "uczestnicy[0].dokument_waznosc": "2036",
+    "zmiana.data": "2026-10-18"
+  },
+  "pola_puste": ["uczestnicy[0].pesel", "wyjazd.data_od"],
+  "braki_do_zgloszenia": ["dokładna data ważności paszportu"],
+  "uwagi": "Numer paszportu podany, PESEL nie — pole PESEL musi zostać puste, a nie wypełnione numerem dokumentu."
+},
+{
+  "id": "MAIL_19",
+  "intencja": "pytanie_przedsprzedazowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 1,
+  "pola": {
+    "kontakt.email": "wiktor.sz@example.com"
+  },
+  "pola_puste": ["wyjazd.nazwa", "wyjazd.kierunek", "wyjazd.data_od", "zgloszenie.liczba_osob", "kontakt.imie_nazwisko", "kontakt.telefon"],
+  "braki_do_zgloszenia": ["który wyjazd", "termin", "liczba osób"],
+  "uwagi": "Najkrótszy możliwy mail. Jedyna poprawna reakcja to dopytanie; każde wypełnione pole to halucynacja."
+},
+{
+  "id": "MAIL_20",
+  "intencja": "platnosc_potwierdzenie",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "wpłata z konta osoby trzeciej, tytuł przelewu bez numeru umowy, brak zapowiedzianego załącznika",
+  "pytania_liczba": 1,
+  "pola": {
+    "wyjazd.kierunek": "Islandia",
+    "wyjazd.termin_opis": ["październik", "pazdziernik"],
+    "kontakt.imie_nazwisko": "Kowalska 17",
+    "kontakt.email": "kowalska17@example.com",
+    "kontakt.telefon": "602 xxx xxx",
+    "platnosc.kwota": 2400,
+    "platnosc.waluta": "PLN",
+    "platnosc.tytul": "wycieczka",
+    "platnosc.nadawca": "Natalia Kowalska 17",
+    "platnosc.nadawca_relacja": ["córka", "corka"]
+  },
+  "pola_puste": ["platnosc.data", "wyjazd.data_od", "umowa.numer"],
+  "braki_do_zgloszenia": ["data przelewu", "załącznik z potwierdzeniem", "numer umowy"],
+  "uwagi": "Załącznik wspomniany, ale nie dołączony — system musi to zauważyć, nie przyjąć wpłaty na słowo. Data przelewu nigdzie nie występuje."
+},
+{
+  "id": "MAIL_21",
+  "intencja": "reklamacja",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "reklamacja z żądaniem rekompensaty i powołaniem na termin ustawowy",
+  "pytania_liczba": 1,
+  "pola": {
+    "wyjazd.nazwa": "Walia",
+    "wyjazd.data_od": "2026-09-21",
+    "wyjazd.data_do": "2026-09-26",
+    "kontakt.imie_nazwisko": "Kowalska 18",
+    "kontakt.email": "kowalska18@example.com",
+    "umowa.numer": "WA/2026/0219",
+    "reklamacja.liczba_zarzutow": 3,
+    "reklamacja.zadanie": ["15% ceny lub zniżka na kolejny wyjazd", "15%"]
+  },
+  "pola_puste": ["zgloszenie.liczba_osob", "platnosc.kwota"],
+  "braki_do_zgloszenia": [],
+  "uwagi": "Model nie uznaje zarzutów ani nie proponuje rekompensaty. Draft może tylko potwierdzić przyjęcie i podać termin odpowiedzi."
+},
+{
+  "id": "MAIL_22",
+  "intencja": "pytanie_przedsprzedazowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "voucher kwotowy z terminem ważności — produkt poza standardową ofertą",
+  "pytania_liczba": 3,
+  "pola": {
+    "kontakt.imie_nazwisko": "Kowalska 19",
+    "kontakt.email": "kowalska19@example.com",
+    "wyjazd.termin_opis": ["kwiecień", "kwiecien"],
+    "zgloszenie.budzet": 10000,
+    "zgloszenie.waluta": "PLN"
+  },
+  "pola_puste": ["uczestnicy[0].imie_nazwisko", "wyjazd.nazwa", "wyjazd.kierunek", "wyjazd.data_od", "zgloszenie.pokoj"],
+  "braki_do_zgloszenia": ["imię i nazwisko obdarowanego", "wybór wyjazdu"],
+  "uwagi": "Obdarowany nazwany tylko 'mąż'. Imię i nazwisko uczestnika musi zostać puste — nie wolno użyć nazwiska żony."
+},
+{
+  "id": "MAIL_23",
+  "intencja": "oferta_grupowa",
+  "intencje_dodatkowe": ["faktura"],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 0,
+  "pola": {
+    "wyjazd.kierunek": "Senja",
+    "wyjazd.termin_opis": ["marzec", "termin marcowy"],
+    "zgloszenie.liczba_osob": 8,
+    "decyzja_klienta": ["wariant B", "wariant B — Senja, 8 osób, termin marcowy"],
+    "kontakt.imie_nazwisko": "Kowalska 20",
+    "kontakt.email": "biuro.turystyka@plastykon.example",
+    "kontakt.cc": "anita@plastykon.example",
+    "kontakt.organizacja": ["PLASTYKON S.A.", "PLASTYKON"],
+    "faktura.wymagana": true,
+    "faktura.nabywca": ["PLASTYKON S.A.", "PLASTYKON"],
+    "faktura.nip": "XXXXXXXXXX",
+    "faktura.adres": "Miasto: xxxxx",
+    "termin.lista_uczestnikow_do": "2027-01-20"
+  },
+  "pola_puste": ["zgloszenie.pokoj", "wyjazd.data_od"],
+  "braki_do_zgloszenia": ["lista uczestników", "wysokość zaliczki do podania klientowi"],
+  "uwagi": "PUŁAPKA CYTATU: pytanie o pokoje jednoosobowe pochodzi od Anity z poprzedniej wiadomości w wątku. Pole pokoju wypełnione z cytatu oznacza, że historia wątku weszła do ekstrakcji jako treść bieżąca."
+},
+{
+  "id": "MAIL_24",
+  "intencja": "zgloszenie_nowe",
+  "intencje_dodatkowe": ["pytanie_przedsprzedazowe"],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "uczestnik niepełnoletni — wymaga zgody opiekuna i decyzji o statusie oraz cenie",
+  "pytania_liczba": 3,
+  "pola": {
+    "wyjazd.kierunek": "Lofoty",
+    "zgloszenie.liczba_osob": 2,
+    "zgloszenie.pokoj": "dwuosobowy",
+    "kontakt.imie_nazwisko": "Kowalska 21",
+    "kontakt.email": "kowalska21@example.com",
+    "kontakt.telefon": "602 xxx xxx",
+    "uczestnicy[0].imie_nazwisko": "Kowalska 21",
+    "uczestnicy[1].rola": ["niepelnoletni", "uczestnik_niepelnoletni"],
+    "uczestnicy[1].wiek": 16,
+    "uczestnicy[1].rok_urodzenia": 2010
+  },
+  "pola_puste": ["uczestnicy[1].imie_nazwisko", "uczestnicy[1].email", "uczestnicy[1].telefon", "wyjazd.data_od"],
+  "braki_do_zgloszenia": ["imię i nazwisko syna", "data urodzenia syna", "zgoda opiekuna prawnego"],
+  "uwagi": "Syn nie jest nazwany. Pokusa: podstawić nazwisko ojca. Rola niepełnoletniego musi zostać rozpoznana, bo od niej zależy komplet dokumentów."
+},
+{
+  "id": "MAIL_25",
+  "intencja": "pytanie_przedsprzedazowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "oczekiwanie gwarancji zjawiska naturalnego i rekompensaty za pogodę — ryzyko zobowiązania",
+  "pytania_liczba": 3,
+  "pola": {
+    "kontakt.imie_nazwisko": "Kowalska 22",
+    "kontakt.email": "kowalska22@example.com",
+    "wyjazd.liczba_dni": 7
+  },
+  "pola_puste": ["wyjazd.nazwa", "wyjazd.kierunek", "wyjazd.data_od", "zgloszenie.liczba_osob"],
+  "braki_do_zgloszenia": ["który wyjazd"],
+  "uwagi": "Mówi 'tych 7 dni', ale nie podaje wyjazdu — pokusa dopisania Lofotów z kontekstu. Draft nie może zawierać ani prawdopodobieństwa w procentach, ani obietnicy zwrotu."
+},
+{
+  "id": "MAIL_26",
+  "intencja": "nie_nasza_sprawa",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "akcja": "odpowiedz_krotko_pomylka",
+  "pytania_liczba": 1,
+  "pola": {
+    "kontakt.imie_nazwisko": "Kowalska 23",
+    "kontakt.email": "kowalska23@example.com"
+  },
+  "pola_puste": ["wyjazd.nazwa", "wyjazd.kierunek", "zgloszenie.liczba_osob", "umowa.numer", "platnosc.kwota"],
+  "braki_do_zgloszenia": [],
+  "uwagi": "'Zamówienie 884102' wygląda jak numer umowy. Wpisanie go w umowa.numer to halucynacja na sprawie, która nas nie dotyczy."
+},
+{
+  "id": "MAIL_27",
+  "intencja": "pytanie_przedsprzedazowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 1,
+  "pola": {
+    "kontakt.imie_nazwisko": "Kowalska 24",
+    "kontakt.email": "kowalska24@example.com",
+    "uczestnicy[0].wiek": 61,
+    "wyposazenie.aparat": ["Olympus OM-D", "Olympus"]
+  },
+  "pola_puste": ["wyjazd.nazwa", "wyjazd.kierunek", "wyjazd.data_od", "zgloszenie.liczba_osob", "wymagania.zdrowie"],
+  "braki_do_zgloszenia": ["który wyjazd", "termin"],
+  "uwagi": "Senja i Spitsbergen pojawiają się jako wspomnienia i lektura bloga, nie jako wybór wyjazdu — oba w wyjazd.kierunek to błąd. Pole zdrowia puste: wiek nie jest informacją o zdrowiu."
+},
+{
+  "id": "MAIL_28",
+  "intencja": "zgloszenie_nowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "sprzeczność w zgłoszeniu: dwie osoby i pokój jednoosobowy",
+  "pytania_liczba": 0,
+  "pola": {
+    "wyjazd.nazwa": ["Islandia Południowa", "Islandia"],
+    "wyjazd.data_od": "2027-10-10",
+    "wyjazd.data_do": "2027-10-17",
+    "zgloszenie.liczba_osob": 2,
+    "zgloszenie.pokoj": "jednoosobowy",
+    "uczestnicy[0].imie_nazwisko": "Kowalska 25",
+    "uczestnicy[0].email": "kowalska25@example.com",
+    "uczestnicy[0].telefon": "602 xxx xxx",
+    "uczestnicy[1].imie_nazwisko": "Kowalska 26",
+    "uczestnicy[1].email": "kowalska26@example.com",
+    "niezgodnosci.liczba": 1,
+    "zgody.regulamin": true,
+    "zgody.marketing": true
+  },
+  "pola_puste": ["uczestnicy[1].telefon", "uczestnicy[0].data_urodzenia", "uczestnicy[1].data_urodzenia"],
+  "braki_do_zgloszenia": ["daty urodzenia obu osób"],
+  "uwagi": "Pole wyboru mówi 'jednoosobowy', uwagi mówią 'jeden pokój dla dwojga'. Wartość z pola zostaje, niezgodność musi być zgłoszona — nie wolno jej po cichu naprawić."
+},
+{
+  "id": "MAIL_29",
+  "intencja": "pytanie_przedsprzedazowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 2,
+  "pola": {
+    "wyjazd.kierunek": "Lofoty",
+    "kontakt.imie_nazwisko": ["Łukasz B.", "Łukasz", "Lukasz B."],
+    "kontakt.email": "lukasz.b@example.com"
+  },
+  "pola_puste": ["kontakt.telefon", "wyjazd.data_od", "zgloszenie.liczba_osob"],
+  "braki_do_zgloszenia": [],
+  "uwagi": "Czyste pytanie do bazy wiedzy: co jest w cenie. Jeśli baza nie ma odpowiedzi, draft nie może jej wymyślić."
+},
+{
+  "id": "MAIL_30",
+  "intencja": "platnosc_prosba_o_zmiane",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "przesunięcie terminu dopłaty — decyzja handlowa, wpływ na rezerwację miejsca",
+  "pytania_liczba": 1,
+  "pola": {
+    "wyjazd.kierunek": "Senja",
+    "wyjazd.termin_opis": "marzec 2027",
+    "kontakt.imie_nazwisko": "Kowalska 28",
+    "kontakt.email": "kowalska28@example.com",
+    "platnosc.procent": 70,
+    "platnosc.termin_wymagany": "2026-12-15",
+    "platnosc.termin_proponowany": "2027-01-05"
+  },
+  "pola_puste": ["platnosc.kwota", "wyjazd.data_od"],
+  "braki_do_zgloszenia": [],
+  "uwagi": "Dwie daty w jednym zdaniu, obie ważne i o różnym znaczeniu. Kwota nie jest podana — tylko procent."
+},
+{
+  "id": "MAIL_31",
+  "intencja": "zgloszenie_nowe",
+  "intencje_dodatkowe": ["wspolpraca_media"],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "propozycja współpracy barterowej (zniżka za materiał) — decyzja handlowa",
+  "pytania_liczba": 1,
+  "pola": {
+    "wyjazd.kierunek": "Walia",
+    "wyjazd.termin_opis": "2027",
+    "zgloszenie.liczba_osob": 1,
+    "zgloszenie.pokoj": "dwuosobowy",
+    "zgloszenie.gotowosc_dzielenia_pokoju": true,
+    "kontakt.imie_nazwisko": "Kowalska 29",
+    "kontakt.email": "kowalska29@example.com",
+    "kontakt.telefon": "602 xxx xxx",
+    "uczestnicy[0].data_urodzenia": "xx.xx.xxxx"
+  },
+  "pola_puste": ["wyjazd.data_od", "faktura.nip"],
+  "braki_do_zgloszenia": [],
+  "uwagi": "Dwie niezależne sprawy w jednym mailu. Zgłoszenie da się obsłużyć automatycznie, barter nie — klasyfikacja jednoetykietowa gubi tu jedną z dwóch spraw."
+},
+{
+  "id": "MAIL_32",
+  "intencja": "pytanie_przedsprzedazowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 4,
+  "pola": {
+    "wyjazd.kierunek": "Islandia",
+    "wyjazd.termin_opis": ["X.2027", "październik 2027", "pazdziernik 2027"],
+    "zgloszenie.liczba_osob": 1,
+    "zgloszenie.pokoj": "jednoosobowy",
+    "kontakt.imie_nazwisko": ["D. Kowalska 30", "Kowalska 30"],
+    "kontakt.email": "kowalska30@kancelaria.example"
+  },
+  "pola_puste": ["kontakt.telefon", "faktura.nip", "faktura.nabywca", "wyjazd.data_od"],
+  "braki_do_zgloszenia": ["imię", "dane do umowy"],
+  "uwagi": "PUŁAPKA KIERUNKU: klient prosi o NASZ NIP i NASZE dane do przelewu. Wypełnienie faktura.nip to odwrócenie ról nadawca/odbiorca."
+},
+{
+  "id": "MAIL_33",
+  "intencja": "pytanie_przedsprzedazowe",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "pytania_liczba": 3,
+  "jezyk_odpowiedzi": "en",
+  "pola": {
+    "wyjazd.kierunek": ["Lofoty", "Lofoten"],
+    "wyjazd.termin_opis": ["luty", "February"],
+    "kontakt.imie_nazwisko": "Kowalska 31",
+    "kontakt.email": "kowalska31@post.example",
+    "kontakt.kraj": ["Niemcy", "Hamburg"],
+    "logistyka.dolaczenie_w_trasie": ["Evenes", "lotnisko Evenes"]
+  },
+  "pola_puste": ["kontakt.telefon", "wyjazd.data_od", "zgloszenie.liczba_osob"],
+  "braki_do_zgloszenia": [],
+  "uwagi": "Mail dwujęzyczny — odpowiedź powinna być po angielsku. Test wykrycia języka: polski początek nie może przesądzić o języku draftu."
+},
+{
+  "id": "MAIL_34",
+  "intencja": "uzupelnienie_danych",
+  "intencje_dodatkowe": ["pytanie_przedsprzedazowe"],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "PESEL o nieprawidłowej długości oraz pytanie o podstawę prawną przetwarzania — odpowiedź wymaga akceptacji",
+  "pytania_liczba": 2,
+  "pola": {
+    "kontakt.imie_nazwisko": "Kowalska 32",
+    "kontakt.email": "kowalska32@example.com",
+    "kontakt.telefon": "602 xxx xxx",
+    "kontakt.telefon_stacjonarny": "22 xxx xx xx",
+    "uczestnicy[0].adres": "Miasto: xxxxx"
+  },
+  "pola_puste": ["uczestnicy[0].pesel", "uczestnicy[0].dokument", "uczestnicy[0].adres_kod_pocztowy", "wyjazd.nazwa", "wyjazd.kierunek"],
+  "braki_do_zgloszenia": ["PESEL — podany numer ma 8 cyfr", "numer paszportu", "kod pocztowy", "który wyjazd"],
+  "uwagi": "Zły kształt PESEL-u (8 cyfr) usuwamy i zgłaszamy jako brak. Dwa telefony: komórkowy jest tym do kontaktu, mimo że wpisany jako drugi i z zastrzeżeniem."
+},
+{
+  "id": "MAIL_35",
+  "intencja": "uzupelnienie_danych",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "wymaga_watku": true,
+  "pytania_liczba": 0,
+  "pola": {
+    "kontakt.email": "kowalska1@example.com",
+    "zgloszenie.gotowosc_dzielenia_pokoju": true,
+    "decyzja_klienta": ["akceptacja współdzielenia pokoju", "zgoda na współdzielenie pokoju"]
+  },
+  "pola_puste": ["uczestnicy[1].imie_nazwisko", "uczestnicy[1].rok_urodzenia", "platnosc.kwota", "wyjazd.data_od"],
+  "braki_do_zgloszenia": [],
+  "uwagi": "PUŁAPKA CYTATU: 'Pan Tomasz', rocznik 1975 i kwota 1 200 zł są w cytacie napisanym przez biuro, nie przez klienta. Treść nowa to trzy słowa i tylko jedna informacja: zgoda."
+},
+{
+  "id": "MAIL_36",
+  "intencja": "pytanie_techniczne",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "pytanie o szanse obserwacji zwierząt i wypożyczenie sprzętu — ryzyko obietnicy bez pokrycia",
+  "pytania_liczba": 3,
+  "pola": {
+    "wyjazd.kierunek": "Grenlandia",
+    "wyjazd.nazwa": ["Scoresby Sund", "Grenlandia — Scoresby Sund"],
+    "kontakt.imie_nazwisko": "Bartek",
+    "kontakt.email": "bartek.r@example.com"
+  },
+  "pola_puste": ["kontakt.telefon", "wyjazd.data_od", "zgloszenie.liczba_osob"],
+  "braki_do_zgloszenia": ["nazwisko", "termin"],
+  "uwagi": "Analogiczny do MAIL_25, inny temat: nie wolno podawać prawdopodobieństwa spotkania zwierzęcia. Pytanie o wypożyczenie 600 mm wymaga sprawdzenia u kontrahenta."
+},
+{
+  "id": "MAIL_37",
+  "intencja": "wspolpraca_media",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "wypowiedź prasowa i licencja na zdjęcia — tylko decyzja właścicielki",
+  "pytania_liczba": 2,
+  "pola": {
+    "kontakt.imie_nazwisko": "Kowalska 34",
+    "kontakt.email": "redakcja@fotomagazyn.example",
+    "kontakt.organizacja": "Fotomagazyn",
+    "termin.odpowiedz_do": "2026-11-20"
+  },
+  "pola_puste": ["wyjazd.nazwa", "wyjazd.kierunek", "zgloszenie.liczba_osob", "kontakt.telefon"],
+  "braki_do_zgloszenia": [],
+  "uwagi": "Zapytanie prasowe wygląda jak zapytanie o wyjazd (wspomina wyjazdy, zdjęcia, rynek). Klasyfikacja jako zgłoszenie uruchamia niepotrzebną ścieżkę umowy."
+},
+{
+  "id": "MAIL_38",
+  "intencja": "sprawa_pilna",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "uczestnik w trakcie wyjazdu bez bagażu — wymaga kontaktu telefonicznego dziś",
+  "priorytet": "pilny",
+  "pytania_liczba": 3,
+  "pola": {
+    "kontakt.imie_nazwisko": ["Jarek H.", "Jarek Kowalska 35", "J. Kowalska 35"],
+    "kontakt.email": "kowalska35@example.com",
+    "kontakt.telefon": "602 xxx xxx",
+    "logistyka.miejsce": ["Evenes", "lotnisko Evenes"],
+    "zdarzenie.rodzaj": ["zgubiony bagaż", "zagubiony bagaz"]
+  },
+  "pola_puste": ["wyjazd.data_od", "wyjazd.nazwa", "platnosc.kwota"],
+  "braki_do_zgloszenia": [],
+  "uwagi": "Jedyny mail z priorytetem pilnym. Zakwalifikowanie go do zwykłej kolejki draftów jest błędem krytycznym — sprawa traci sens po kilku godzinach."
+},
+{
+  "id": "MAIL_39",
+  "intencja": "systemowy",
+  "intencje_dodatkowe": [],
+  "do_czlowieka": false,
+  "powod_do_czlowieka": null,
+  "akcja": "nie_odpowiadaj_popraw_adres",
+  "pytania_liczba": 0,
+  "pola": {
+    "system.adres_niedostarczony": "ewa.k@gmial.com",
+    "system.kod_bledu": ["550", "550 5.1.1"]
+  },
+  "pola_puste": ["kontakt.imie_nazwisko", "kontakt.telefon", "zgloszenie.liczba_osob"],
+  "pola_tolerowane": ["wyjazd.nazwa", "wyjazd.kierunek"],
+  "braki_do_zgloszenia": [],
+  "uwagi": "Odbicie od serwera. Adres z literówką (gmial.com) to dane do poprawienia w bazie, nie kontakt do odpowiedzi. Senja z cytatu — tolerowane, bo wiąże odbicie ze zgłoszeniem MAIL_02."
+},
+{
+  "id": "MAIL_40",
+  "intencja": "po_wyjezdzie",
+  "intencje_dodatkowe": ["rodo_wizerunek", "pytanie_przedsprzedazowe"],
+  "do_czlowieka": true,
+  "powod_do_czlowieka": "żądanie dotyczące wykorzystania wizerunku — ograniczenie użycia zdjęcia i podpis autorski",
+  "pytania_liczba": 3,
+  "pola": {
+    "wyjazd.kierunek": "Walia",
+    "kontakt.imie_nazwisko": "Kowalska 36",
+    "kontakt.email": "kowalska36@example.com"
+  },
+  "pola_puste": ["wyjazd.data_od", "zgloszenie.liczba_osob", "platnosc.kwota"],
+  "braki_do_zgloszenia": ["termin otwarcia zapisów na Lofoty 2028"],
+  "uwagi": "Trzy sprawy: zdjęcia grupowe, wizerunek, zapisy na przyszły rok. Pochwała na początku nie zmienia tego, że w środku jest żądanie prawne. Drugie i trzecie pytanie nie mogą zniknąć z draftu."
+}
+]

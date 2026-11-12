@@ -1,0 +1,96 @@
+{
+  "_opis": "Dwa poziomy klasyfikacji. Poziom zgrubny (6 klas) decyduje o trasie wiadomości w systemie i tylko on jest mierzalny na 40 wiadomościach. Poziom szczegółowy (19 etykiet) służy do wyboru szablonu draftu i do analizy błędów — przy liczebności 1 na klasę nie liczy się dla niego trafności per klasa.",
+  "_uwaga": "UZGODNIONE 7 XI 2026 z typami z biuro/schemas.py. Dwie zmiany wobec wersji pierwotnej: (1) dodana trasa 'rezerwacja' — etykiety rezerwacja_* mapowały się na nią, ale nie było jej w 'zgrubne', więc każde potwierdzenie wychodziło jako nieprzypisana trasa; (2) do 'szczegolowe_na_zgrubne' dopisane nazwy typów produkcyjnych z TypMaila, żeby wyjście klasyfikatora dało się ocenić bez tłumaczenia.",
+  "_zmiany_w_kodzie": "Przebieg harnessu wykazał, że TypMaila nie miał odpowiednika dla tras 'sprawa_trudna' (4 wiadomości) i 'biznes' (3). Rezygnacja i reklamacja wpadały jako 'uczestnik' i dostawały automatyczny draft. Oba typy zostały dodane, razem z flagą do_czlowieka i listą zamkniętą 11 warunków w prompty/klasyfikacja.md.",
+
+  "zgrubne": {
+    "zgloszenie": {
+      "opis": "Klient chce jechać albo uzupełnia dane do wyjazdu, na który już się zapisał.",
+      "trasa": "ekstrakcja do bazy + draft potwierdzenia; przy komplecie danych generowanie umowy"
+    },
+    "pytanie": {
+      "opis": "Pytanie przed zakupem albo techniczne, bez zgłoszenia.",
+      "trasa": "draft odpowiedzi z bazy wiedzy; bez zapisu do rejestru zgłoszeń"
+    },
+    "pieniadze": {
+      "opis": "Faktura, potwierdzenie wpłaty, niezgodność płatności, prośba o zmianę terminu.",
+      "trasa": "rejestr płatności; draft tylko dla prostego potwierdzenia, reszta do człowieka"
+    },
+    "sprawa_trudna": {
+      "opis": "Rezygnacja, reklamacja, sprawa pilna w trakcie wyjazdu, żądanie po wyjeździe.",
+      "trasa": "zawsze do człowieka; system przygotowuje tylko kartę sprawy z faktami"
+    },
+    "biznes": {
+      "opis": "Wycena grupowa, współpraca, media, barter.",
+      "trasa": "do człowieka; bez draftu, bo wymaga decyzji handlowej"
+    },
+    "nieobslugiwane": {
+      "opis": "Spam, sprawa innej firmy, wiadomość systemowa, treść bez możliwego kontekstu.",
+      "trasa": "brak draftu; spam i odbicia bez odpowiedzi, pomyłka z krótką odpowiedzią, brak kontekstu do kolejki człowieka"
+    },
+    "rezerwacja": {
+      "opis": "Potwierdzenie przysłane nam przez dostawcę: linia lotnicza, obiekt, wypożyczalnia, ubezpieczyciel.",
+      "trasa": "rejestr rezerwacji i arkusz wyjazdu; bez draftu, bo dostawcom nie odpisujemy"
+    }
+  },
+
+  "szczegolowe_na_zgrubne": {
+    "zgloszenie_nowe": "zgloszenie",
+    "uzupelnienie_danych": "zgloszenie",
+    "zmiana_danych": "zgloszenie",
+
+    "pytanie_przedsprzedazowe": "pytanie",
+    "pytanie_techniczne": "pytanie",
+
+    "faktura": "pieniadze",
+    "platnosc_potwierdzenie": "pieniadze",
+    "platnosc_niezgodnosc": "pieniadze",
+    "platnosc_prosba_o_zmiane": "pieniadze",
+
+    "rezygnacja": "sprawa_trudna",
+    "reklamacja": "sprawa_trudna",
+    "reklamacja_obslugi": "sprawa_trudna",
+    "sprawa_pilna": "sprawa_trudna",
+    "po_wyjezdzie": "sprawa_trudna",
+    "rodo_wizerunek": "sprawa_trudna",
+
+    "oferta_grupowa": "biznes",
+    "wspolpraca_media": "biznes",
+
+    "spam": "nieobslugiwane",
+    "nie_nasza_sprawa": "nieobslugiwane",
+    "systemowy": "nieobslugiwane",
+    "inne_wymaga_kontekstu": "nieobslugiwane",
+
+    "rezerwacja_lot": "rezerwacja",
+    "rezerwacja_nocleg": "rezerwacja",
+    "rezerwacja_auto": "rezerwacja",
+    "rezerwacja_ubezpieczenie": "rezerwacja",
+
+    "_typy_produkcyjne": "Poniżej nazwy z TypMaila w biuro/schemas.py. Klasyfikator produkcyjny zwraca je bezpośrednio, więc ewaluator mapuje je na trasę bez dodatkowego tłumaczenia. Lista tych nazw jest też w _tylko_produkcyjne - narzędzia do wypełniania ground truth muszą je POMIJAĆ, żeby nie dało się oznaczyć wiersza gold nazwą typu produkcyjnego.",
+    "formularz": "zgloszenie",
+    "dane_do_umowy": "zgloszenie",
+    "akceptacja": "zgloszenie",
+    "zapytanie": "pytanie",
+    "uczestnik": "pytanie",
+    "organizacyjny": "pieniadze",
+    "sprawa_trudna": "sprawa_trudna",
+    "biznes": "biznes",
+    "rezerwacja": "rezerwacja",
+    "inne": "nieobslugiwane"
+  },
+
+  "_tylko_produkcyjne": [
+    "formularz", "dane_do_umowy", "akceptacja", "zapytanie", "uczestnik",
+    "organizacyjny", "sprawa_trudna", "biznes", "rezerwacja", "inne"
+  ],
+
+  "licznosc_w_korpusie_zgrubne": {
+    "zgloszenie": 12,
+    "pytanie": 13,
+    "pieniadze": 4,
+    "sprawa_trudna": 4,
+    "biznes": 3,
+    "nieobslugiwane": 4
+  }
+}

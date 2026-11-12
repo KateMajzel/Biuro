@@ -1,0 +1,73 @@
+# Wiodący ukośnik jest tu istotny. Wzorzec `dane/` bez niego dopasowuje się
+# na KAŻDEJ głębokości, więc wykluczał też `korpus/dane/` — korpus testowy,
+# do którego odsyła README. Repozytorium zawierałoby wtedy odpowiedzi
+# wzorcowe z `korpus/gold/` bez wiadomości, których dotyczą, a harness
+# pomiarowy byłby nie do uruchomienia.
+
+# sekrety i konfiguracja lokalna
+.env
+/config.yaml
+/wyjazdy.yaml
+
+# wzorce dokumentów firmy. WAŻNE przy publikacji repo:
+# prawdziwa umowa i regulamin zostają lokalnie, nie w repozytorium.
+/wsad/
+/szablony/*.docx
+/szablony/*.pdf
+
+# dane firmy i klientów - NIGDY do repo
+/dane/
+/nagrania/
+/wiedza/*
+!/wiedza/README.md
+!/wiedza/00-przyklad.md
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# modele i indeksy
+*.npy
+*.gguf
+*.safetensors
+
+# wyjście pomiarów - zawiera prawdziwą pocztę i dane uczestników.
+# UWAGA: `korpus/dane/` zostaje w repozytorium, bo to korpus syntetyczny.
+# Przed publikacją sprawdź, czy nie wrzuciłaś tam prawdziwego eksportu:
+#   python skrypty/sprawdz_do_publikacji.py
+/korpus/out/
+
+# stary zestaw pomiarowy z osobnej sesji. Jego dane testowe zawierają numery
+# PESEL z poprawną sumą i istniejącą datą, więc nie idzie do repozytorium.
+# Aktualne narzędzie pomiarowe jest w korpus/.
+/ewaluacja/
+
+# opakowania .cmd generowane przez skrypty/zadania_harmonogramu.py
+/zadania/
+
+# kopie zapasowe plików podmienianych przez skrypty/podmien_pliki.py
+/kopie_zapasowe/
+
+# bazy danych i dokumenty, gdziekolwiek by się znalazły
+*.sqlite
+*.sqlite-journal
+*.db
+
+# przypadkowa zagnieżdżona kopia projektu i odłożona stara historia gita
+/biuro-bielik/
+/.git-stare/
+
+# robocza lista plików do sprawdzenia przed wysyłką
+/lista.txt
+
+# ustawienia edytora
+/.vscode/
+
+# zestaw 30 zgłoszeń testowych wysyłanych na skrzynkę: adresy w prawdziwych
+# domenach i numery NIP z poprawną sumą kontrolną. Zostaje lokalnie, dopóki
+# nie zostanie oczyszczony.
+/korpus/dane/zgloszenia_formularze_30.txt

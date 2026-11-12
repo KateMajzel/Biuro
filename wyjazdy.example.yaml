@@ -1,0 +1,120 @@
+# Dane wyjazdów. Trzeci i ostatni plik, który wypełniasz ręcznie.
+#
+# Stąd umowa bierze wszystko, co dotyczy imprezy, a nie uczestnika i nie firmy.
+# Ten sam plik zasila potem rejestr umów, plik dla UFG i odprawę przedwyjazdową,
+# więc termin i cenę wpisujesz raz, a nie w trzech miejscach.
+#
+# Skopiuj do wyjazdy.yaml. Klucz (np. "walia-2027") to identyfikator wyjazdu,
+# którym posługujesz się przy generowaniu umowy.
+
+walia-2027:
+  nazwa: "Warsztaty fotograficzne — Walia"
+  miejsce: "Walia, Wielka Brytania — Snowdonia, wybrzeże Pembrokeshire"
+  termin_od: "21.09.2027"
+  termin_do: "26.09.2027"
+  dni: 6
+  noclegi: 5
+  uczestnicy_min: 6
+  uczestnicy_max: 9
+  jezyk_lokalni: "nie dotyczy"
+
+  # transport
+  transport_rodzaj: "transfery mikrobusem; przelot nie jest objęty umową"
+  wyjazd_miejsce: "lotnisko w Manchesterze, godz. 14:00"
+  wyjazd_data: "21.09.2027"
+  powrot_miejsce: "lotnisko w Manchesterze, godz. 12:00"
+  powrot_data: "26.09.2027"
+  postoje: "nie dotyczy"
+  transport_na_miejscu: "dojazdy do plenerów mikrobusem, ok. 80–150 km dziennie"
+  miejsce_rozpoczecia: "lotnisko w Manchesterze"
+
+  # zakwaterowanie
+  obiekt: "[nazwa obiektu, położenie]"
+  obiekt_kategoria: "gospodarstwo / lodge, kategoria wg przepisów kraju pobytu"
+  pokoje: "pokoje 2-osobowe jako standard"
+  doplata_1os: "[kwota]"
+
+  # cena
+  cena: "[kwota]"
+  waluta: "PLN"
+  do_zaplaty: "[kwota]"
+  termin_zaplaty_dni: 7
+  termin_zaplaty_data: "[data]"
+
+  # program i świadczenia
+  program_warsztaty: "[liczba sesji, zakres tematyczny, prowadzący]"
+  program_plenery: "[liczba plenerów, lokalizacje]"
+  program_przeglady: "[przeglądy zdjęć, omówienia, konsultacje]"
+  program_wstepy: "[bilety wstępu, przewodnicy lokalni, licencje fotograficzne]"
+  swiadczenia_nieobjete: >-
+    przeloty do miejsca zbiórki, wszystkie posiłki i napoje, wstępy poza programem,
+    wypożyczenie sprzętu fotograficznego, wydatki własne, dopłata do pokoju 1-osobowego
+
+  # pilot / osoba odpowiedzialna
+  pilot_imie: ""
+  pilot_telefon: ""
+  pilot_email: ""
+  pilot_komunikator: "WhatsApp"
+
+  # dostępność i formalności
+  dostepnosc: "nie jest"
+  dostepnosc_opis: >-
+    kilkukilometrowych przejść w terenie, wchodzenia na punkty widokowe,
+    noszenia sprzętu fotograficznego i pobytu na zimnie przez kilka godzin
+  dokumenty_wymagane: "paszport ważny co najmniej 6 miesięcy od daty powrotu"
+  wizy: "[uzupełnić zgodnie z aktualnymi przepisami dla obywateli RP]"
+  sanitarne: "brak obowiązkowych szczepień"
+  kraj_poza_eog: "Wielka Brytania"
+
+dolomity-jesien-2026:
+  nazwa: "Jesienne Dolomity"
+  miejsce: "Włochy, Dolomity — Cortina d'Ampezzo, Lago di Braies, Seceda"
+  termin_od: "11.10.2026"
+  termin_do: "[data]"
+  dni: "[liczba]"
+  noclegi: "[liczba]"
+  uczestnicy_min: 6
+  uczestnicy_max: 8
+  jezyk_lokalni: "nie dotyczy"
+
+  transport_rodzaj: "wynajęty bus 8/9-osobowy"
+  wyjazd_miejsce: "Katowice, dworzec główny, godz. 9:00 (możliwy postój w Gliwicach ok. 10:00)"
+  wyjazd_data: "11.10.2026"
+  powrot_miejsce: "Katowice"
+  powrot_data: "[data]"
+  postoje: "Gliwice, CH Europa Centralna, ok. 10:00"
+  transport_na_miejscu: "codzienne dojazdy do plenerów busem, trasy ustalane pod kątem pogody"
+  miejsce_rozpoczecia: "Katowice"
+
+  obiekt: "Cortina d'Ampezzo"
+  obiekt_kategoria: "[kategoria wg przepisów kraju pobytu]"
+  pokoje: "pokoje 2-osobowe"
+  doplata_1os: "[kwota]"
+
+  cena: "[kwota]"
+  waluta: "PLN"
+  do_zaplaty: "[kwota]"
+  termin_zaplaty_dni: 7
+  termin_zaplaty_data: "[data]"
+
+  program_warsztaty: "[liczba sesji, zakres tematyczny, prowadzący]"
+  program_plenery: "[liczba plenerów, lokalizacje]"
+  program_przeglady: "[przeglądy zdjęć, omówienia, konsultacje]"
+  program_wstepy: "[bilety wstępu, przewodnicy lokalni]"
+  swiadczenia_nieobjete: >-
+    wyżywienie (do dyspozycji wyposażona kuchnia), atrakcje fakultatywne
+    (np. wynajem łódki na Lago di Braies), koleje linowe (wjazd na Secedę, Lagazuoi)
+
+  pilot_imie: ""
+  pilot_telefon: ""
+  pilot_email: ""
+  pilot_komunikator: "Facebook Messenger"
+
+  dostepnosc: "nie jest"
+  dostepnosc_opis: >-
+    przejść w terenie górskim, wchodzenia na punkty widokowe, noszenia sprzętu
+    i powrotów po zachodzie słońca
+  dokumenty_wymagane: "dowód osobisty lub paszport; od 2024 r. Włochy wymagają rejestracji wszystkich gości"
+  wizy: "wiza nie jest wymagana"
+  sanitarne: "brak obowiązkowych szczepień"
+  kraj_poza_eog: "nie dotyczy — impreza odbywa się na terenie EOG"

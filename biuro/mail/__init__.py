@@ -1,0 +1,1 @@
+"""Obsługa skrzynki pocztowej."""

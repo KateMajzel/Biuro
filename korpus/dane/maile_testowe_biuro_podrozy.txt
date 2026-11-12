@@ -1,0 +1,790 @@
+ZESTAW TESTOWY — KORESPONDENCJA PRZYCHODZĄCA DO BIURA PODRÓŻY
+Biuro Przykładowe (dane fikcyjne, wygenerowane do testów)
+40 wiadomości, celowo zróżnicowana jakość: formularze, proza, literówki,
+brak danych, wątki, dwie osoby w jednym mailu, maile nie na temat.
+
+Linie zaczynające się od [CASE] to metadane do ewaluacji — do usunięcia
+przed podaniem korpusu na wejście modelu.
+
+================================================================================
+===== MAIL 01 =====
+[CASE] formularz ze strony, dane kompletne — przypadek łatwy, baseline
+Od: formularz@biuro-przykladowe.example
+Do: biuro@biuro-przykladowe.example
+Temat: Nowe zgłoszenie z formularza — Lofoty luty 2027
+
+Nowe zgłoszenie ze strony biuro-przykladowe.example
+
+Wyjazd: Lofoty — zorze i zima, 12-19.02.2027
+Imię i nazwisko: Kowalska 1
+E-mail: kowalska1@example.com
+Telefon: +48 602 xxx xxx
+Liczba osób: 1
+Pokój: jednoosobowy (dopłata)
+Doświadczenie fotograficzne: średnio zaawansowany, Nikon Z6 II, szeroki + 70-200
+Uwagi: Proszę o fakturę na firmę. Dane podam po potwierdzeniu miejsca.
+Zgoda na regulamin: TAK
+Zgoda marketingowa: NIE
+
+================================================================================
+===== MAIL 02 =====
+[CASE] formularz, ale pola wypełnione bezsensownie / "-" zamiast danych
+Od: formularz@biuro-przykladowe.example
+Do: biuro@biuro-przykladowe.example
+Temat: Nowe zgłoszenie z formularza — Senja
+
+Nowe zgłoszenie ze strony biuro-przykladowe.example
+
+Wyjazd: Senja
+Imię i nazwisko: ewa
+E-mail: ewa.k@
+Telefon: 000000000
+Liczba osób: -
+Pokój: -
+Doświadczenie fotograficzne: tak
+Uwagi: xxx
+Zgoda na regulamin: TAK
+Zgoda marketingowa: TAK
+
+================================================================================
+===== MAIL 03 =====
+[CASE] proza, bardzo uprzejma, pytanie o dwa terminy, brak decyzji
+Od: kowalska2@example.net
+Do: biuro@biuro-przykladowe.example
+Temat: Pytanie o wyjazd na Lofoty
+
+Dzień dobry,
+
+trafiłam na Państwa stronę przez bloga i od razu wpadły mi w oko relacje
+z Lofotów. Zastanawiam się nad wyjazdem zimowym, ale mam problem z wyborem
+terminu — luty czy marzec? Zależy mi głównie na zorzach, ale nie chciałabym
+też marznąć 24 godziny na dobę, bo mam problemy z krążeniem w dłoniach.
+
+Druga rzecz: jadę prawdopodobnie sama, ale nie wykluczam, że dołączy do mnie
+siostra. Czy można zgłosić się teraz jednoosobowo i dopisać drugą osobę
+później, jeśli się zdecyduje?
+
+Z góry dziękuję za odpowiedź i pozdrawiam serdecznie,
+Kowalska 2
+
+================================================================================
+===== MAIL 04 =====
+[CASE] dwie osoby w jednym mailu, dane drugiej osoby niekompletne
+Od: kowalska3@example.org
+Do: biuro@biuro-przykladowe.example
+Temat: zgłoszenie 2 osoby islandia
+
+Dobry wieczór,
+
+chcielibyśmy zapisać się na Islandię w październiku, dwie osoby:
+
+Kowalska 3, ur. xx.xx.xxxx, tel 602 xxx xxx, kowalska3@example.org
+oraz moja żona Monika (nazwisko to samo), telefonu nie podaję bo i tak
+wszystko idzie przez mnie.
+
+Pokój dwuosobowy oczywiście. Monika nie fotografuje, będzie mi tylko
+towarzyszyć — czy jest jakaś niższa cena dla osoby nie biorącej udziału
+w warsztatach?
+
+Pozdrawiam
+PG
+
+================================================================================
+===== MAIL 05 =====
+[CASE] literówki, brak polskich znaków, pisane z telefonu, skrótowo
+Od: kamil.kowalska4@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: pytanko
+
+dzien dobry czy sa jeszcze miejsca na walie we wrzesniu? i czy w cenie jest
+transport z lotniska bo lece z krakowa przez londyn i dojade pozno wieczorem.
+dzieki z gory
+
+Wysłane z iPhone'a
+
+================================================================================
+===== MAIL 06 =====
+[CASE] odpowiedź w wątku, cytowana historia, nowe pytanie na końcu
+Od: kowalska1@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: Re: Re: Potwierdzenie zgłoszenia — Lofoty 12-19.02.2027
+
+Dziękuję, zadatek przelałem dzisiaj rano.
+
+Dane do faktury:
+FOTOFIRMA Kowalska 1, Miasto: xxxxx, NIP XXXXXXXXXX
+
+Przy okazji — czy na liście uczestników jest już ktoś, kto jedzie sam?
+Pytam, bo gdyby ktoś chciał dzielić pokój, to zrezygnowałbym z dopłaty
+do jedynki.
+
+> W dniu 03.11.2026 o 09:12 biuro@biuro-przykladowe.example napisał(a):
+>
+> Dzień dobry,
+> potwierdzamy rezerwację miejsca na wyjazd Lofoty — zorze i zima.
+> Zadatek 2 670 zł prosimy wpłacić do 10.11.2026.
+> W załączeniu umowa uczestnictwa oraz regulamin.
+>
+>> W dniu 02.11.2026 Kowalska 1 napisał(a):
+>> Dzień dobry, czy moje zgłoszenie z formularza doszło? Nie dostałem
+>> żadnego potwierdzenia, a widzę na stronie że zostały 2 miejsca.
+
+================================================================================
+===== MAIL 07 =====
+[CASE] rezygnacja, pyta o zwrot, powołuje się na regulamin, ton napięty
+Od: kowalska5@poczta.example
+Do: biuro@biuro-przykladowe.example
+Temat: REZYGNACJA - Grenlandia
+
+Dzień dobry,
+
+niestety muszę zrezygnować z wyjazdu na Grenlandię (Scoresby Sund, sierpień
+2027). Powód jest prozaiczny — zmiana pracy i brak możliwości wzięcia urlopu
+w tym terminie.
+
+Wpłaciłam już 30% zadatku, czyli 5 400 zł. W regulaminie pkt 7 jest mowa
+o potrąceniach, ale sformułowanie "faktycznie poniesione koszty" jest dla mnie
+niejasne. Proszę o konkretną kwotę, którą odzyskam, i o termin zwrotu.
+Jeśli potrącenie będzie wysokie, to proszę o informację, czy mogę przepisać
+miejsce na inną osobę — mam koleżankę, która być może by weszła na moje miejsce.
+
+Kowalska 5
+
+================================================================================
+===== MAIL 08 =====
+[CASE] mail bez kontekstu, "jak ustaliliśmy" — wymaga szukania w historii
+Od: tomek.b@firma-b.example
+Do: biuro@biuro-przykladowe.example
+Temat: (bez tematu)
+
+To jak ustaliliśmy telefonicznie, proszę o przesłanie tego dokumentu.
+
+T. Kowalska 6
+
+================================================================================
+===== MAIL 09 =====
+[CASE] prośba o fakturę, dane firmy wklejone chaotycznie z nagłówka strony
+Od: ksiegowosc@medikor.example
+Do: biuro@biuro-przykladowe.example
+Temat: faktura do zgłoszenia Kowalska 8
+
+Dobry dzień,
+
+prosimy o fakturę za wyjazd Pani Kowalska 8 (Senja, marzec 2027).
+Dane:
+
+MEDIKOR Sp. z o.o. | Miasto: xxxxx
+NIP: XXX-XX-XX-XXX | KRS XXXXXXXXXX | tel. 32 xxx xx xx
+www.medikor.example | biuro czynne 8-16
+
+Faktura na całość kwoty, płatność przelewem 14 dni. Proszę dopisać
+w uwagach numer zamówienia Z/2026/1187.
+
+Pozdrawiam
+Kowalska 7
+Dział Księgowości
+
+================================================================================
+===== MAIL 10 =====
+[CASE] pytanie o ubezpieczenie i gwarancję — dotyka TFG/UFG, wymaga ostrożności
+Od: kowalska10@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: zabezpieczenie wpłat
+
+Dzień dobry,
+
+zanim wpłacę zaliczkę — jesteście wpisani do rejestru organizatorów turystyki?
+Mój poprzedni wyjazd z innym biurem skończył się tak, że biuro zniknęło razem
+z moimi pieniędzmi i do dziś walczę o zwrot. Proszę o numer wpisu do rejestru
+i informację, czy odprowadzacie składki na Turystyczny Fundusz Gwarancyjny.
+
+Dodatkowo: jakie ubezpieczenie jest w cenie? Interesuje mnie konkretnie,
+czy obejmuje sprzęt fotograficzny, bo wiozę ciało + 3 obiektywy wartości
+ponad 30 tys. zł.
+
+Kowalska 10
+
+================================================================================
+===== MAIL 11 =====
+[CASE] brakuje najważniejszej informacji — nie podaje, o który wyjazd chodzi
+Od: kowalska11@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: Zapisy
+
+Dzień dobry,
+chciałabym się zapisać na wyjazd. Dwie osoby, pokój dwuosobowy.
+Proszę o informację co dalej.
+Kowalska 11, 602 xxx xxx
+
+================================================================================
+===== MAIL 12 =====
+[CASE] ALL CAPS, pretensja, niejasne czego dotyczy
+Od: kowalska12@mail.example
+Do: biuro@biuro-przykladowe.example
+Temat: BRAK ODPOWIEDZI!!
+
+DZIEŃ DOBRY PISZĘ JUŻ TRZECI RAZ I NIKT NIE ODPOWIADA. CZY WY TAM W OGÓLE
+CZYTACIE TE MAILE? WPŁATA ZOSTAŁA ZROBIONA 21.10 Z KONTA MOJEJ ŻONY A NA
+LIŚCIE MNIE NIE MA. PROSZĘ TO WYJAŚNIĆ BO ZACZYNAM MIEĆ WĄTPLIWOŚCI CO DO
+TEJ WSPÓŁPRACY.
+KOWALSKA 12
+
+================================================================================
+===== MAIL 13 =====
+[CASE] dieta i alergia — dane wrażliwe, do przekazania do hotelu
+Od: kowalska13@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: Re: Umowa uczestnictwa — Walia 2027
+
+Dzień dobry,
+
+umowę podpisaną skanem wysyłam w załączniku.
+
+Jedna rzecz, o której nie pisałam w formularzu, bo nie było pola: mam
+celiakię, dieta bezglutenowa jest dla mnie koniecznością, nie wyborem.
+Czy mogą Państwo potwierdzić to u gospodarzy noclegów? Mój mąż ma dodatkowo
+alergię na orzechy, ale on jedzie tylko na pierwsze trzy dni.
+
+Druga sprawa — czy w grupie będzie ktoś mówiący po angielsku lepiej ode mnie?
+Pytam, bo gdyby trzeba było coś tłumaczyć w restauracji, to wolałabym
+nie być zdana na siebie.
+
+Kowalska 13
+
+================================================================================
+===== MAIL 14 =====
+[CASE] zapytanie grupowe B2B, dużo wątków w jednej wiadomości
+Od: kowalska14@fotoklub-wroclaw.example
+Do: biuro@biuro-przykladowe.example
+Temat: Wyjazd dla klubu fotograficznego — 11 osób
+
+Dzień dobry,
+
+reprezentuję Fotoklub Wrocław. Jesteśmy zainteresowani wyjazdem grupowym
+dla 11 osób (możliwe 9-13, ostateczna liczba w styczniu).
+
+Pytania:
+1. Czy przy takiej grupie jest możliwy wyjazd na wyłączność, w terminie
+   ustalonym z nami, a nie z kalendarza na stronie?
+2. Jaka byłaby cena za osobę przy 9, 11 i 13 osobach?
+3. Czy opiekun/prowadzący klubu może jechać na preferencyjnych warunkach?
+4. Faktura zbiorcza na klub czy osobne na uczestników — co jest u Państwa
+   standardem? U nas księgowość woli jedną.
+5. Interesowałaby nas Senja albo Lofoty, ale rozważamy też Walię jako
+   tańszą opcję. Co poleciliby Państwo grupie o mieszanym poziomie?
+6. Potrzebujemy oferty na papierze (PDF z pieczątką) do wniosku o dotację
+   z urzędu miasta, termin złożenia 15.12.
+
+Z poważaniem
+Kowalska 14
+Prezes Fotoklubu Wrocław
+tel. 71 xxx xx xx, kom. 602 xxx xxx
+
+================================================================================
+===== MAIL 15 =====
+[CASE] mail nie na temat / spam ofertowy — powinien zostać odfiltrowany
+Od: marketing@seo-boost-pro.example
+Do: biuro@biuro-przykladowe.example
+Temat: Pozycjonowanie dla biuro-przykladowe.example — audyt gratis
+
+Dzień dobry,
+
+przeanalizowaliśmy Państwa stronę biuro-przykladowe.example i widzimy duży
+potencjał wzrostu. Obecnie tracą Państwo około 70% ruchu z fraz
+"wyjazdy fotograficzne" oraz "zorza polarna wycieczka".
+
+Przygotowaliśmy bezpłatny audyt — czy mogę zadzwonić w tym tygodniu?
+
+Pozdrawiam
+Daniel K., SEO Boost Pro
+
+================================================================================
+===== MAIL 16 =====
+[CASE] pytanie techniczne o sprzęt, dużo szczegółów, mało danych osobowych
+Od: pfoto@skrzynka.example
+Do: biuro@biuro-przykladowe.example
+Temat: sprzęt na mróz
+
+Hej,
+
+mam pytanie czysto techniczne przed zgłoszeniem. Jadę z Fuji X-T4, znam
+problem z bateriami w mrozie. Czy w busie/na miejscu jest możliwość
+ładowania w trakcie dnia, czy trzeba brać 6 akumulatorów i modlić się?
+
+Czy statyw karbonowy wystarczy, czy przy takim wiatrze lepiej cięższy
+aluminiowy? I czy filtry ND mają sens w lutym na Lofotach, czy to raczej
+temat na Islandię?
+
+Jeszcze jedno: czy jest szansa na sesje na plaży w nocy, czy program jest
+sztywny i wszystko jedziemy razem?
+
+P.
+
+================================================================================
+===== MAIL 17 =====
+[CASE] przesłany dalej (FW) mail od osoby trzeciej, prawdziwy pytający w środku
+Od: kowalska15@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: FW: pytanie od mamy
+
+Dzień dobry, przesyłam maila od mamy, ona nie radzi sobie z formularzem
+na stronie. Proszę odpowiadać do mnie, ja jej przekażę.
+
+---------- Przekazana wiadomość ----------
+Od: kowalska16@example.org
+Data: 4 listopada 2026
+Temat: pytanie od mamy
+
+Aniu kochana, napisz do nich czy ja w moim wieku (68 lat) mogę jechać na te
+Lofoty. Czy duzo sie chodzi? Mam problem z kolanem po operacji ale chodzę
+normalnie tylko nie po górach. I czy trzeba mieć ten drogi aparat czy moj
+Canon 600D wystarczy. Buziaki Mama
+
+================================================================================
+===== MAIL 18 =====
+[CASE] zmiana danych uczestnika po podpisaniu umowy
+Od: kowalska8@medikor.example
+Do: biuro@biuro-przykladowe.example
+Temat: Re: Umowa — Senja marzec 2027 — ZMIANA NAZWISKA
+
+Dzień dobry,
+
+w umowie mam nazwisko Kowalska 8, ale od 18 października nazywam się
+Kowalska 9 (ślub). Paszport już wymieniony, nowy numer: XX xxxxxxx,
+ważny do 2036.
+
+Czy trzeba aneksować umowę? I czy bilety lotnicze, które kupuję sama,
+muszą być na nowe nazwisko — bo rezerwację robiłam w sierpniu na stare.
+
+Kowalska 9
+
+================================================================================
+===== MAIL 19 =====
+[CASE] jedno zdanie, zero kontekstu, wymaga dopytania
+Od: wiktor.sz@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: ile
+
+ile to kosztuje
+
+================================================================================
+===== MAIL 20 =====
+[CASE] wpłata na złe konto / zły tytuł przelewu, załącznik wspomniany ale brak
+Od: kowalska17@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: potwierdzenie przelewu - prosze o sprawdzenie
+
+Dzien dobry,
+
+w zalaczniku potwierdzenie przelewu na 2400 zl. Niestety w tytule wpisalam
+tylko "wycieczka" bo nie mialam pod reka numeru umowy, mam nadzieje ze to
+nie problem. Przelew robila moja corka ze swojego konta (Natalia Kowalska 17),
+wiec nazwisko na przelewie sie zgadza ale imie nie.
+
+Czy to wystarczy jako zadatek na Islandie w pazdzierniku?
+
+Kowalska 17
+tel 602 xxx xxx
+
+================================================================================
+===== MAIL 21 =====
+[CASE] reklamacja po wyjeździe, konkretne zarzuty, żąda rekompensaty
+Od: kowalska18@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: Reklamacja — Walia 21-26.09.2026
+
+Dzień dobry,
+
+składam reklamację dotyczącą wyjazdu do Walii we wrześniu.
+
+Zarzuty:
+- W programie na stronie był punkt "sesja o wschodzie słońca przy zamku
+  Carreg Cennen" — nie odbyła się ani razu przez 5 dni.
+- Nocleg w drugim obiekcie nie odpowiadał opisowi ("pokoje z łazienkami"
+  — łazienka była wspólna na korytarzu dla 4 pokoi).
+- Prowadzący przez dwa dni zajmował się głównie dwiema osobami z grupy,
+  reszta radziła sobie sama.
+
+Nie podważam sensu całego wyjazdu, zdjęcia mam dobre, ale za to co wyżej
+oczekuję rekompensaty. Proponuję 15% ceny lub zniżkę na kolejny wyjazd.
+Czekam na odpowiedź w terminie ustawowym.
+
+Kowalska 18
+(uczestnik, umowa WA/2026/0219)
+
+================================================================================
+===== MAIL 22 =====
+[CASE] prośba o voucher/prezent — nieznane dane osoby obdarowanej
+Od: kowalska19@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: prezent dla męża - voucher?
+
+Dzień dobry :)
+
+Chciałabym kupić mężowi wyjazd na urodziny (kwiecień). On fotografuje od
+20 lat i marzy o zorzy. Problem: nie wiem, czy da mu się wziąć urlop,
+więc nie mogę wybrać terminu.
+
+Czy sprzedają Państwo vouchery na kwotę, do wykorzystania w ciągu roku?
+Jak długo jest ważny? I czy można dostać coś na papierze, żeby włożyć
+do koperty? Bardzo by mi zależało żeby to ładnie wyglądało.
+
+Budżet mam do 10 tysięcy, ale gdyby trzeba było dopłacić różnicę, to on
+by dopłacił sam.
+
+Kowalska 19
+
+================================================================================
+===== MAIL 23 =====
+[CASE] wątek z dwiema osobami odpisującymi, mieszane cytowania
+Od: biuro.turystyka@plastykon.example
+Do: biuro@biuro-przykladowe.example
+Cc: anita@plastykon.example
+Temat: Re: Re: Re: Wyjazd integracyjno-fotograficzny Plastykon
+
+Dzień dobry,
+
+uzupełniając maila Anity — zarząd zaakceptował wariant B (Senja, 8 osób,
+termin marcowy). Potrzebujemy teraz:
+- umowy na firmę (dane niżej),
+- listy uczestników do uzupełnienia przez nas do 20.01,
+- informacji o zaliczce.
+
+> Od: anita@plastykon.example
+> Dzień dobry, jeszcze jedno pytanie od zarządu: czy jest możliwość
+> noclegu w pokojach jednoosobowych dla wszystkich? Mamy osoby, które
+> zdecydowanie nie chcą dzielić pokoju z kolegami z pracy.
+>
+>> Od: biuro@biuro-przykladowe.example
+>> Przesyłam dwa warianty — A (Lofoty) i B (Senja). Różnica w cenie
+>> wynika głównie z transferów.
+
+PLASTYKON S.A., Miasto: xxxxx, NIP XXXXXXXXXX
+
+Kowalska 20
+Dział Administracji
+
+================================================================================
+===== MAIL 24 =====
+[CASE] osoba niepełnoletnia w grupie — wymaga zgody opiekuna
+Od: kowalska21@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: wyjazd z synem 16 lat
+
+Dzień dobry,
+
+chciałbym jechać na Lofoty z synem. Syn ma 16 lat (ur. 2010), bardzo
+poważnie podchodzi do fotografii, ma już swoje wystawy w szkole.
+
+Czy osoba niepełnoletnia może być uczestnikiem? Jeśli tak, to jakie
+dokumenty muszę dostarczyć poza umową? Czy syn liczy się jako pełny
+uczestnik warsztatów, czy jako osoba towarzysząca (różnica w cenie?).
+
+Jedziemy razem, pokój dwuosobowy, więc nadzór mam zapewniony.
+
+Kowalska 21
+602 xxx xxx
+
+================================================================================
+===== MAIL 25 =====
+[CASE] pytanie o pogodę/gwarancję zorzy — oczekiwanie niemożliwe do spełnienia
+Od: kowalska22@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: czy zorza jest gwarantowana
+
+Dzień dobry,
+
+to będzie dziwne pytanie, ale muszę je zadać, bo wydaję na to spore pieniądze.
+Jakie jest realne prawdopodobieństwo, że zobaczę zorzę w ciągu tych 7 dni?
+Czytałam, że bywają wyjazdy, gdzie ludzie nie widzą nic.
+
+Jeśli nie zobaczę zorzy, to czy jest jakaś forma rekompensaty? Rozumiem,
+że nie macie wpływu na pogodę, ale może jest druga szansa w innym terminie
+albo częściowy zwrot?
+
+I jeszcze — jak wygląda plan, jak jest pochmurno przez 5 dni? Siedzimy
+w hotelu czy jest program zapasowy?
+
+Kowalska 22
+
+================================================================================
+===== MAIL 26 =====
+[CASE] mail wysłany na zły adres, dotyczy innej firmy
+Od: kowalska23@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: zwrot kurtki rozmiar XL
+
+Dzień dobry,
+zamówiłem u Państwa kurtkę puchową rozmiar XL, zamówienie 884102, i chciałbym
+ją zwrócić bo jest za mała. Proszę o adres do zwrotu i etykietę.
+Kowalska 23
+
+================================================================================
+===== MAIL 27 =====
+[CASE] bardzo długa proza, dużo dygresji, konkretne pytanie ukryte na końcu
+Od: kowalska24@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: Marzenie o Arktyce
+
+Szanowni Państwo,
+
+od dziecka marzyłam o północy. Mój ojciec był marynarzem i przywoził ze
+Spitsbergenu zdjęcia, które do dziś mam w albumie — czarno-białe, ziarniste,
+ale dla mnie piękniejsze niż wszystko, co dziś widzę w internecie. Przez
+lata odkładałam ten wyjazd, najpierw dzieci, potem praca, potem opieka nad
+mamą. Mama zmarła w marcu i pomyślałam, że jeśli nie teraz, to nigdy.
+
+Czytałam Państwa bloga, szczególnie relację z Senji — ten tekst o czekaniu
+trzy godziny na świetle, które nie przyszło, bardzo mnie poruszył, bo
+dokładnie tak wyobrażam sobie fotografię. Mam 61 lat, fotografuję amatorsko
+od emerytury, Olympus OM-D, uczyłam się sama z YouTube'a i trochę z książek.
+Wiem, że nie jestem na poziomie Państwa uczestników.
+
+I to jest właśnie moje pytanie: czy ktoś taki jak ja nie będzie kulą przy
+nodze dla grupy? Nie chciałabym, żeby ktoś musiał na mnie czekać albo
+tłumaczyć mi rzeczy podstawowe. Jeśli Państwo uznają, że to nie dla mnie,
+proszę napisać szczerze — wolę to usłyszeć teraz.
+
+Z szacunkiem
+Kowalska 24
+
+================================================================================
+===== MAIL 28 =====
+[CASE] zgłoszenie z formularza, konflikt danych wewnątrz zgłoszenia
+Od: formularz@biuro-przykladowe.example
+Do: biuro@biuro-przykladowe.example
+Temat: Nowe zgłoszenie z formularza — Islandia
+
+Nowe zgłoszenie ze strony biuro-przykladowe.example
+
+Wyjazd: Islandia Południowa, 10-17.10.2027
+Imię i nazwisko: Kowalska 25
+E-mail: kowalska25@example.com
+Telefon: 602 xxx xxx
+Liczba osób: 2
+Pokój: jednoosobowy
+Doświadczenie fotograficzne: zaawansowany
+Uwagi: Jedziemy z partnerką, prosimy o jeden pokój. Druga osoba:
+Kowalska 26, kowalska26@example.com
+Zgoda na regulamin: TAK
+Zgoda marketingowa: TAK
+
+================================================================================
+===== MAIL 29 =====
+[CASE] pyta o coś, co jest na stronie — test odpowiedzi z bazy wiedzy
+Od: lukasz.b@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: co jest w cenie
+
+Dzień dobry, czy w cenie wyjazdu na Lofoty jest przelot? I wyżywienie?
+Na stronie nie mogę tego znaleźć, a chciałbym wiedzieć ile mnie to
+naprawdę wyniesie z wszystkim.
+Łukasz B.
+
+================================================================================
+===== MAIL 30 =====
+[CASE] prośba o przesunięcie terminu płatności, powód osobisty
+Od: kowalska28@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: dopłata - prośba o przesunięcie
+
+Dzień dobry,
+
+mam dopłacić pozostałe 70% do 15 grudnia. Czy jest możliwość przesunięcia
+tego terminu do 5 stycznia? Dostaję premię roczną w pierwszym tygodniu
+stycznia i wtedy zapłacę całość bez problemu, a teraz byłoby mi to bardzo
+trudno zebrać przed świętami.
+
+Zadatek wpłaciłam w terminie i bardzo mi zależy na tym wyjeździe, nie chcę
+stracić miejsca. Jeśli to niemożliwe, to proszę napisać od razu, żebym
+mogła pożyczyć od rodziny.
+
+Kowalska 28, Senja marzec 2027
+
+================================================================================
+===== MAIL 31 =====
+[CASE] dwie sprawy niezwiązane w jednym mailu (rezerwacja + współpraca)
+Od: kowalska29@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: zgłoszenie + propozycja
+
+Dzień dobry,
+
+1) Zapisuję się na Walię 2027, jedna osoba, pokój dwuosobowy do dzielenia
+   jeśli ktoś się znajdzie. Kowalska 29, 602 xxx xxx, ur. xx.xx.xxxx.
+
+2) Zupełnie osobna sprawa: prowadzę kanał na YouTube o fotografii krajobrazowej
+   (18 tys. subskrybentów). Czy byliby Państwo zainteresowani współpracą —
+   ja robię materiał z wyjazdu, Państwo dają zniżkę lub darmowe miejsce?
+   Mam już takie współprace z dwiema firmami sprzętowymi, mogę podesłać
+   statystyki.
+
+Pozdrawiam
+Kowalska 29
+
+================================================================================
+===== MAIL 32 =====
+[CASE] bardzo skrótowy mail biznesowy, oczekuje konkretów, bez uprzejmości
+Od: kowalska30@kancelaria.example
+Do: biuro@biuro-przykladowe.example
+Temat: Islandia X.2027 - 1 os.
+
+Proszę o:
+- potwierdzenie wolnego miejsca
+- cenę z dopłatą do jedynki
+- wzór umowy do wglądu przed wpłatą
+- NIP i dane do przelewu
+
+D. Kowalska 30
+
+================================================================================
+===== MAIL 33 =====
+[CASE] mail po polsku od obcokrajowca — składnia łamana, miesza języki
+Od: kowalska31@post.example
+Do: biuro@biuro-przykladowe.example
+Temat: Participation question / pytanie
+
+Dzien dobry,
+
+my name is Lukas, ja mowie troche po polsku ale nie dobrze, sorry.
+
+I want to join the Lofoten trip in February. Question: is the workshop
+in Polish only? Czy przewodnik mowi po angielsku? If everything is polish
+I think I will not understand the technical parts.
+
+Also — I live in Hamburg, do I need to come to Poland first or can I meet
+the group in Norway (Evenes airport)?
+
+Danke / dziekuje
+Kowalska 31
+
+================================================================================
+===== MAIL 34 =====
+[CASE] pytanie o dokumenty do umowy, podaje dane częściowo błędne
+Od: kowalska32@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: dane do umowy
+
+Dzien dobry, przesylam dane do umowy jak prosiliscie:
+
+Kowalska 32
+Miasto: xxxxx
+PESEL xxxxxxxx
+paszport - nie mam przy sobie, podam pozniej
+telefon 22 xxx xx xx (to domowy, komorka 602 xxx xxx ale rzadko odbieram)
+
+Czy PESEL jest konieczny? Wolalabym nie podawac, czytalam ze to dane
+wrazliwe. Jesli tak to prosze napisac po co jest potrzebny.
+
+================================================================================
+===== MAIL 35 =====
+[CASE] odpowiedź jednym słowem w wątku — wymaga kontekstu całego wątku
+Od: kowalska1@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: Re: Propozycja współdzielenia pokoju — Lofoty
+
+Tak, biorę.
+
+M.
+
+> Dzień dobry, mamy drugiego uczestnika jadącego solo (Pan Tomasz, rocznik
+> 1975, niepalący). Przy współdzieleniu pokoju dopłata 1 200 zł zostaje
+> anulowana. Czy mamy tak to zapisać?
+
+================================================================================
+===== MAIL 36 =====
+[CASE] pytanie o fotografię dzikich zwierząt, oczekiwanie wobec etyki/pozwoleń
+Od: bartek.r@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: Grenlandia - wieloryby i misie
+
+Cześć,
+
+czytam o Scoresby Sund i mam pytanie: jakie są realne szanse na niedźwiedzia
+polarnego z dystansu nadającego się do zdjęcia z 400 mm? Nie chcę plamki
+na horyzoncie.
+
+Czy łódź podpływa blisko wielorybów, czy trzymacie dystans? Pytam, bo byłem
+na wyjazdie w Norwegii gdzie podpływali tak blisko, że czułem się
+nieprzyjemnie, a zdjęcia miałem średnie bo wszyscy się tłoczyli.
+
+Jeszcze: czy jest możliwość wypożyczenia na miejscu 600 mm? Nie chcę kupować
+na jeden wyjazd.
+
+Bartek
+
+================================================================================
+===== MAIL 37 =====
+[CASE] zapytanie prasowe — nie jest zgłoszeniem uczestnika
+Od: redakcja@fotomagazyn.example
+Do: biuro@biuro-przykladowe.example
+Temat: prośba o komentarz do artykułu
+
+Dzień dobry,
+
+przygotowujemy materiał o rynku wyjazdów fotograficznych w Polsce
+(numer styczniowy). Chcielibyśmy poprosić o krótką wypowiedź:
+jak zmieniła się grupa odbiorców takich wyjazdów w ostatnich 3 latach
+i czy widać wpływ AI na zainteresowanie fotografią krajobrazową.
+
+Deadline: 20 listopada. Objętość: 800-1200 znaków. Potrzebujemy też
+zdjęcia osoby wypowiadającej się oraz 2-3 fotografii z wyjazdów
+(z podpisem autora, na licencję jednorazową).
+
+Kowalska 34
+Redakcja Fotomagazyn
+
+================================================================================
+===== MAIL 38 =====
+[CASE] uczestnik pisze w trakcie wyjazdu, sprawa pilna
+Od: kowalska35@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: PILNE - zgubiony bagaz Evenes
+
+Dzien dobry, pisze z lotniska, linie zgubily moj bagaz, mam tylko reczny.
+W bagazu byly wszystkie rzeczy cieple i statyw. Grupa juz pojechala, ja
+zostalem zalatwiac zgloszenie. Co mam robic? Czy jest mozliwosc wypozyczenia
+czegos na miejscu? Czy ubezpieczenie ktore mam w pakiecie to pokrywa?
+Prosze o telefon jak najszybciej 602 xxx xxx.
+Jarek H.
+
+================================================================================
+===== MAIL 39 =====
+[CASE] autoresponder / wiadomość systemowa — nie wymaga odpowiedzi
+Od: mailer-daemon@googlemail.com
+Do: biuro@biuro-przykladowe.example
+Temat: Delivery Status Notification (Failure)
+
+Wiadomość nie została dostarczona do jednego lub większej liczby odbiorców.
+
+Adres: ewa.k@gmial.com
+Powód: 550 5.1.1 The email account that you tried to reach does not exist.
+
+----- Original message -----
+Temat: Potwierdzenie zgłoszenia — Senja marzec 2027
+Dzień dobry, dziękujemy za zgłoszenie. W załączeniu umowa...
+
+================================================================================
+===== MAIL 40 =====
+[CASE] pytanie po wyjeździe o zdjęcia i prawa autorskie
+Od: kowalska36@example.com
+Do: biuro@biuro-przykladowe.example
+Temat: zdjęcia grupowe i publikacja na blogu
+
+Dzień dobry,
+
+wróciłam z Walii zachwycona, dziękuję za świetnie zorganizowany wyjazd.
+
+Dwie sprawy:
+1. Czy dostaniemy zdjęcia grupowe, które robił prowadzący ostatniego dnia?
+   Obiecał wrzucić je gdzieś do pobrania, ale nie dostałam linku.
+2. Widzę na Państwa blogu relację, a w niej moje zdjęcie z sesji przy
+   wodospadzie — to miłe, ale nie przypominam sobie, żebym podpisywała
+   zgodę na wykorzystanie wizerunku. Nie mam nic przeciwko, chciałabym
+   tylko, żeby był podpis z moim nazwiskiem i żeby zdjęcie nie było
+   używane w reklamach płatnych.
+
+Przy okazji — kiedy otwierają się zapisy na Lofoty 2028? Chciałabym
+zarezerwować z wyprzedzeniem, najlepiej z tą samą grupą.
+
+Kowalska 36

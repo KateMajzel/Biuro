@@ -1,0 +1,77 @@
+name: testy
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  testy:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+
+      - name: Zależności bez modelu
+        # Testy nie potrzebują torcha ani sentence-transformers - model
+        # jest podstawiany. Instalujemy tylko to, co jest faktycznie używane,
+        # żeby CI nie ciągnęło kilku gigabajtów wag.
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml python-dotenv pydantic requests numpy \
+                                docxtpl python-docx openpyxl
+
+      - name: Konfiguracja z przykładów
+        run: |
+          cp config.example.yaml config.yaml
+          cp wyjazdy.example.yaml wyjazdy.yaml
+          printf 'IMAP_USER=ci@example.com\nIMAP_PASSWORD=ci\n' > .env
+
+      - name: Testy
+        run: python testy/uruchom_wszystkie.py
+
+      - name: Sprawdzenie gotowości (bez modelu i skrzynki)
+        # Ma zwrócić kod 1, bo przykładowa konfiguracja nie jest wypełniona.
+        # Sprawdzamy, że skrypt działa i wykrywa braki, a nie że przechodzi.
+        run: |
+          python skrypty/sprawdz_gotowosc.py --bez-modelu --bez-skrzynki && \
+            (echo "BŁĄD: sprawdzenie gotowości przeszło na pustej konfiguracji" && exit 1) || \
+            echo "OK: braki w konfiguracji wykryte poprawnie"
+
+  brak-danych-firmy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: W repozytorium nie ma danych firmy ani sekretów
+        run: |
+          set -e
+          for sciezka in config.yaml wyjazdy.yaml .env dane wsad; do
+            if [ -e "$sciezka" ]; then
+              echo "BŁĄD: $sciezka jest w repozytorium — to plik lokalny"
+              exit 1
+            fi
+          done
+          if ls szablony/*.docx >/dev/null 2>&1; then
+            echo "BŁĄD: szablony/*.docx są w repozytorium — to dokumenty firmy"
+            exit 1
+          fi
+          echo "OK: brak plików lokalnych i dokumentów firmy"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Żaden przykładowy PESEL nie może należeć do osoby
+        # Numer jest groźny, gdy ma poprawną sumę kontrolną ORAZ istniejącą
+        # datę. Przykłady w testach łamią jeden z tych warunków celowo.
+        run: python .github/skrypty/pesele_w_repo.py

@@ -1,0 +1,183 @@
+# Jedyny plik, który trzeba zmienić, żeby uruchomić to w innej firmie.
+# Skopiuj do config.yaml i wypełnij. config.yaml jest w .gitignore.
+
+firma:
+  nazwa: "Twoja Firma"
+  pelna_nazwa: ""              # pełna nazwa do umów
+  nip: ""
+  regon: ""
+  adres: ""
+  kod_pocztowy: ""
+  miasto: ""
+  email: ""
+  telefon: ""
+  www: "https://twojafirma.example"
+  # dane organizatora turystyki, używane przez copilota kompletności i w umowach
+  rejestr_nr: ""               # numer wpisu do rejestru organizatorów turystyki
+  rejestr_organ: ""            # np. "Śląskiego" - wchodzi jako "Marszałek Woj. ..."
+  branza: "biuro podróży, warsztaty i wyprawy fotograficzne"
+
+# Rachunek do wpłat - wchodzi do §2 umowy
+rachunek:
+  bank: ""
+  numer: ""
+  powierniczy: "nie są"        # "nie są" albo "są" przyjmowane na rachunek powierniczy
+
+# Zabezpieczenie finansowe na wypadek niewypłacalności - §8 umowy.
+# Zmienia się raz w roku, przy odnowieniu gwarancji.
+gwarancja:
+  forma: "gwarancja ubezpieczeniowa"
+  podmiot: ""
+  adres_kontakt: ""
+  numer: ""
+  suma: ""
+  od: ""
+  do: ""
+
+# Polisa dla uczestników - §8 umowy. Jeśli różni się między wyjazdami,
+# te same klucze można nadpisać w wyjazdy.yaml.
+ubezpieczenie:
+  ubezpieczyciel: ""
+  polisa: ""
+  kl: ""                       # koszty leczenia
+  nnw: ""
+  bagaz: ""
+  assistance: ""
+  sprzet: "nieobjęty"
+  sprzet_info: "ubezpieczenie z §8 nie obejmuje sprzętu fotograficznego"
+  rezygnacja: "nie wykupuje"   # domyślnie; ustawiane per uczestnik przy generowaniu
+
+umowy:
+  miejscowosc: "Katowice"      # miejsce zawarcia umowy
+  wzor_numeru: "{nr}/{rok}"    # np. 7/2026
+
+# Miesięczny wykaz umów dla portalu UFG/TFG.
+#
+# Formatu tego pliku aplikacja NIE zgaduje, bo to plik regulacyjny i wymagania
+# portalu zmieniają się niezależnie od kodu. Ułóż kolumny dokładnie tak, jak
+# wygląda plik, który dziś wrzucasz do portalu.
+#
+# Dostępne wartości w polu `pole`:
+#   python skrypty/zrob_csv_ufg.py --pola
+#
+# Kolumna może być też stałą - wtedy zamiast `pole` podaj `stala`.
+ufg:
+  separator: ";"
+  kodowanie: "utf-8-sig"       # BOM, żeby Excel nie psuł polskich znaków
+  kolumny:
+    - naglowek: "Numer umowy"
+      pole: nr_umowy
+    - naglowek: "Data zawarcia"
+      pole: data_zawarcia_pl
+    - naglowek: "Nazwa imprezy"
+      pole: wyjazd_nazwa
+    - naglowek: "Data rozpoczecia"
+      pole: data_rozpoczecia
+    - naglowek: "Data zakonczenia"
+      pole: data_zakonczenia
+    - naglowek: "Liczba podroznych"
+      pole: liczba_osob
+    - naglowek: "Cena"
+      pole: kwota
+    - naglowek: "Nazwisko"
+      pole: nazwisko
+    - naglowek: "Imie"
+      pole: imie
+
+# Licznik dni do deklaracji TFG. Zero modelu, kilka linijek kodu, a chroni
+# przed konsekwencją ustawową.
+tfg:
+  # Dzień miesiąca, do którego trzeba złożyć deklarację za miesiąc poprzedni.
+  # SPRAWDŹ tę wartość w aktualnym stanie prawnym przed pierwszym użyciem -
+  # aplikacja tylko odlicza dni, nie zna przepisu.
+  dzien_deklaracji: 21
+  ostrzegaj_od_dni: 7
+
+modele:
+  host: "http://localhost:11434"
+  # UWAGA: nazwy tagów w Ollamie zweryfikuj skryptem skrypty/sprawdz_modele.py
+  # zanim ruszysz dalej. Nie zgaduj - wypisze, co masz lokalnie.
+  #
+  # Konfiguracja domyślna: 7B Q8 w trybie hybrydowym. Zmierzone 7 XI 2026
+  # na 12 syntetycznych zgłoszeniach: 100% pól krytycznych, mediana 4,35 s.
+  # Cały system mieści się poniżej 10B, więc kwalifikuje się do kategorii SLM.
+  duzy: "SpeakLeash/bielik-minitron-7B-v3.0-instruct:Q8_0"
+  maly: "hf.co/speakleash/Bielik-4.5B-v3.0-Instruct-GGUF:latest"
+  temperatura_pisanie: 0.4
+  temperatura_zadania: 0.0
+  limit_tokenow: 1200
+  kontekst: 8192
+
+ekstrakcja:
+  # "hybryda" - pola o sztywnym formacie (PESEL, telefon, e-mail, kod pocztowy)
+  #             ustala regex z walidacją i WYPROWADZA je ze schematu JSON;
+  #             model dostaje ich wartości tylko do wiadomości
+  # "llm"     - model widzi pełny schemat, regex nadal waliduje po fakcie
+  #
+  # Tryb optymalny zależy od ROZMIARU modelu, nie od upodobań:
+  #   7B   hybryda 100% / 100%,  llm 100% / 100% ale p95 dwa razy dłuższe
+  #   4.5B llm 98,1% / 83,3%,    hybryda 96,3% / 66,7%
+  # Zabieranie pól ze schematu pomaga 7B i szkodzi 4.5B. Przy zmianie modelu
+  # na mniejszy przestaw to na "llm".
+  tryb: "hybryda"
+  # Flaguj do weryfikacji człowiekiem PESEL o poprawnej długości, ale błędnej
+  # sumie kontrolnej. Zły kształt jest usuwany zawsze, niezależnie od tej opcji.
+  flaguj_bledna_sume: true
+
+embeddingi:
+  # ollama — wektory liczy ta sama usługa, która obsługuje Bielika. Nic więcej
+  #   nie trzeba instalować: `ollama pull bge-m3` i gotowe.
+  # sentence_transformers — polski model mmlw, lepszy na polskich zapytaniach,
+  #   ale ciągnie torch i transformers. Na Windowsie z włączonym Smart App
+  #   Control biblioteka natywna paczki `regex` bywa blokowana i wtedy
+  #   `import sentence_transformers` nie przechodzi wcale.
+  silnik: "ollama"
+  model_ollama: "bge-m3"             # wielojęzyczny, obsługuje polski
+  model: "sdadas/mmlw-retrieval-roberta-large"   # tylko dla sentence_transformers
+  prefiks_zapytania: ""              # mmlw-retrieval wymaga "zapytanie: ", bge-m3 nie
+  partia: 16                         # ile fragmentów w jednym żądaniu do Ollamy
+  rozmiar_chunka: 900                # znaki
+  zakladka: 150
+  liczba_wynikow: 6
+
+poczta:
+  serwer_imap: "imap.gmail.com"
+  port_imap: 993
+  uzytkownik: ""               # albo zmienna IMAP_USER w .env
+  folder_wejsciowy: "INBOX"
+  limit_na_przebieg: 20
+  styl_przyklady: 5            # ile Twoich dawnych odpowiedzi jako przykłady stylu
+  # Fraza w temacie maila z formularza na stronie. Pozwala pominąć LLM
+  # i sparsować zgłoszenie deterministycznie. Sprawdzana jako FRAGMENT tematu,
+  # więc wystarczy jego początek — wpisz dokładnie to, co wysyła Twój formularz.
+  # Zła wartość nie daje błędu, tylko po cichu wyłącza całą szybką trasę:
+  # zgłoszenia idą wtedy jako "dane dosyłane do umowy" i nowe zgłoszenie
+  # w bazie nie powstaje.
+  temat_formularza: "Formularz zgłoszeniowy"
+
+  # Podpis dokładany do każdego draftu. Model go NIE pisze — nie zna imienia
+  # i nie ma skąd, więc bez tego pola zostawiał w treści znacznik
+  # "[DO UZUPEŁNIENIA: imię]", który trzeba było poprawiać ręcznie
+  # w każdej odpowiedzi.
+  podpis: |
+    Pozdrawiam
+    [Imię]
+
+sciezki:
+  wyjazdy: "wyjazdy.yaml"
+  wiedza: "wiedza"
+  indeks: "dane/indeks"
+  baza: "dane/biuro.sqlite"
+  szablony: "szablony"
+  umowy: "dane/umowy"
+  nagrania: "nagrania"
+  excel_rozmowy: "dane/rozmowy.xlsx"
+  prompty: "prompty"
+
+bezpieczenstwo:
+  # Twarde zasady dla modułu pisania odpowiedzi. Nie zmieniaj na False
+  # bez przemyślenia - to one trzymają model przy faktach.
+  tylko_z_bazy_wiedzy: true          # brak kontekstu = brak odpowiedzi
+  zakaz_cen_i_terminow: true         # ceny i terminy tylko dosłownie z bazy wiedzy
+  nigdy_nie_wysylaj: true            # moduł mailowy TYLKO tworzy drafty
+  fraza_niepewnosci: "Nie mam tej informacji w bazie wiedzy - do uzupełnienia przed wysyłką."

@@ -1,0 +1,265 @@
+ZESTAW TESTOWY — POTWIERDZENIA REZERWACJI (dane fikcyjne)
+Biuro Przykładowe. 3 wiadomości: lot, nocleg z kodem do skrytki, auto.
+Struktura, kolejność sekcji, stopki i śmieci formatujące odwzorowują
+realne maile transakcyjne. Wszystkie numery, kody i rezerwacje zmyślone.
+
+================================================================================
+===== POTWIERDZENIE 01 — LOT =====
+[CASE] OTA, dwa segmenty tam + dwa z powrotem, dwaj pasażerowie, bagaż osobno,
+       cena rozbita na składniki, tekst częściowo z szablonu angielskiego
+Od: no-reply@rezerwacje.flylinkpl.example
+Do: biuro@biuro-przykladowe.example
+Temat: Potwierdzenie rezerwacji FL-8842190 | WAW-EVE 12.02.2027
+Data: 4 listopada 2026, 14:07
+
+To jest wiadomość automatyczna. Prosimy na nią nie odpowiadać.
+
+--------------------------------------------------------------------
+POTWIERDZENIE REZERWACJI
+Numer rezerwacji (PNR): QК7RT2
+Numer zamówienia: FL-8842190
+Status: POTWIERDZONA / CONFIRMED
+Data wystawienia: 04.11.2026 14:07 CET
+--------------------------------------------------------------------
+
+PASAŻEROWIE
+1. KOWALSKA 38/ANNA MS             ur. xxxx       bilet 117-2284419023
+2. KOWALSKA 1/MAREK MR               ur. xxxx       bilet 117-2284419024
+
+PODRÓŻ TAM — czwartek 12.02.2027
+  SK 4722   Warszawa Chopin (WAW)  06:25  ->  Oslo Gardermoen (OSL)  08:40
+            Terminal: - / Terminal 2 (non-Schengen)
+            Klasa: Y (ekonomiczna)   Czas przesiadki: 1h 55min
+  SK 4094   Oslo Gardermoen (OSL)  10:35  ->  Evenes/Harstad-Narvik (EVE) 12:25
+            Klasa: Y (ekonomiczna)
+
+PODRÓŻ POWROTNA — czwartek 19.02.2027
+  SK 4097   Evenes (EVE)           13:10  ->  Oslo Gardermoen (OSL)  15:05
+  SK 4729   Oslo Gardermoen (OSL)  16:50  ->  Warszawa Chopin (WAW)  19:00
+
+BAGAŻ
+  Bagaż podręczny: 1 szt. do 8 kg (55x40x23 cm) — w cenie, obaj pasażerowie
+  Bagaż rejestrowany: 1 x 23 kg — PAX 1 (dokupiony)
+                      2 x 23 kg — PAX 2 (dokupione)
+  Sprzęt sportowy/specjalny: nie zgłoszono
+  UWAGA: statyw fotograficzny powyżej 60 cm nie jest akceptowany
+  w bagażu podręcznym na trasach SK.
+
+PŁATNOŚĆ
+  Taryfa lotnicza (2 x 1 184,00 PLN)                     2 368,00 PLN
+  Podatki i opłaty lotniskowe                              742,00 PLN
+  Bagaż rejestrowany (3 szt.)                              810,00 PLN
+  Opłata transakcyjna FlyLink                               99,00 PLN
+  --------------------------------------------------------------------
+  RAZEM                                                   4 019,00 PLN
+  Zapłacono kartą **** **** **** xxxx dnia 04.11.2026
+  Faktura VAT zostanie wysłana w osobnej wiadomości w ciągu 48 h.
+
+ODPRAWA
+  Odprawa online otwiera się 22 godziny przed odlotem i zamyka 1 godzinę
+  przed odlotem. Zalecamy stawienie się na lotnisku 2 godziny przed
+  odlotem w ruchu międzynarodowym.
+  Zarządzaj rezerwacją: https://rezerwacje.flylinkpl.example/mmb?ref=FL-8842190
+
+Zmiany i zwroty: taryfa zmienna, zmiana daty 320 PLN + różnica w cenie.
+Bilet bezzwrotny z wyjątkiem opłat lotniskowych.
+
+--
+FlyLink Sp. z o.o., Miasto: xxxxx
+NIP XXXXXXXXXX | Wpis do Rejestru Organizatorów i Pośredników
+Turystycznych nr 21/18/2019
+Ta wiadomość i wszelkie załączniki są poufne. If you are not the intended
+recipient, please delete this message and notify the sender.
+Nie drukuj tej wiadomości, jeśli nie musisz.
+
+================================================================================
+===== POTWIERDZENIE 02 — NOCLEG (samodzielne zameldowanie, kod do skrytki) =====
+[CASE] platforma najmu, wiadomość od gospodarza doklejona pod sekcją systemową,
+       kod do skrytki w środku prozy, godziny w czasie lokalnym (CET),
+       dwa adresy (budynek i parking), mieszane PL/EN/NO
+Od: automated@stayfjord-booking.example
+Do: biuro@biuro-przykladowe.example
+Reply-To: host-3318@mail.stayfjord-booking.example
+Temat: Your stay is confirmed — Hamnøy Rorbu 4 (12–19 Feb 2027) · Ref SF-7741208
+Data: 4 November 2026, 16:22
+
+[ To jest wiadomość automatyczna z systemu StayFjord. Odpowiedź na tę
+  wiadomość zostanie przekazana do gospodarza. ]
+
+BOOKING CONFIRMED
+Reference: SF-7741208
+Property:  Hamnøy Rorbu 4 — Sjøhus, 2 bedrooms, 1 bathroom
+Address:   Miasto: xxxxx
+Host:      Kowalska 37 (verified host, 7 years)
+Guests:    6 (max 6)
+Check-in:  Thursday 12 February 2027, from 16:00
+Check-out: Thursday 19 February 2027, before 11:00
+Nights:    7
+
+PRICE BREAKDOWN
+  7 nights x NOK 3 450                                    NOK 24 150
+  Cleaning fee (one-off)                                  NOK  1 200
+  Service fee                                             NOK  1 015
+  Local tourist tax (6 guests x 7 nights)                 NOK    420
+  ---------------------------------------------------------------
+  TOTAL                                                   NOK 26 785
+  Paid on 04.11.2026 (Visa ending xxxx)                   NOK 13 392
+  Remaining balance, charged automatically 12.01.2027     NOK 13 393
+
+CANCELLATION
+  Free cancellation until 29.12.2026 23:59 (local time, Europe/Oslo).
+  After that date: 50% refund until 12.01.2027, no refund afterwards.
+
+--------------------------------------------------------------------
+MESSAGE FROM YOUR HOST
+--------------------------------------------------------------------
+
+Hei Anna og velkommen til Lofoten!
+
+Piszę po angielsku, mam nadzieję że to OK. Here is everything you need
+for arrival — please read it before you travel, because there is no
+reception and I may not be on the island when you arrive.
+
+SELF CHECK-IN. The key safe (nøkkelboks) is mounted on the right side
+of the entrance door, under the small wooden roof, about 150 cm from the
+ground. It is black, you may need to brush snow off it. The code is
+4 7 2 9 — press the buttons firmly, then slide the cover down. Inside
+there are two keys: the long one is the front door, the short one is
+the storage room (bod) where you can leave wet clothes and tripods.
+Please put BOTH keys back in the box on departure and scramble the code.
+
+Important: the code is changed between guests. If 4729 does not work,
+it means you are standing at Rorbu 3 (the red one closer to the water)
+— the right house has a white window frame and the number 4 painted
+on the door.
+
+PARKING is not at the house. Please park at Miasto: xxxxx, there is
+a gravel area marked "Gjesteparkering Rorbu 1-6", about 120 m back
+towards the bridge. The road to the house itself is not cleared after
+heavy snow and cars do get stuck there — I am saying this because it
+happened three times last winter.
+
+HEATING. The heat pump is set to 19 degrees, please do not turn it off
+when you go out shooting, the pipes can freeze. There is a wood stove
+in the living room, wood is in the bod, more wood outside under the
+tarpaulin — use it, it is included.
+
+WATER. Hot water takes about 20 minutes to recover if six people shower
+one after another. Please space it out.
+
+FOR PHOTOGRAPHERS: the best view of the Reinebringen wall is from the
+small wooden pier directly behind the house, you may use it any time
+including at night. Please do not walk onto the neighbour's pier on the
+left side, it belongs to the fishing company and it is slippery and
+unlit. Aurora is often visible from the pier directly, you do not need
+to drive anywhere.
+
+My phone: +47 xxx xx xxx. Norwegian or English, please send SMS rather
+than calling if it is after 22:00. For anything urgent (water, heating,
+electricity) call, any hour, it is fine.
+
+Ha en fin tur!
+Gro
+
+--------------------------------------------------------------------
+StayFjord AS, Miasto: xxxxx
+Org.nr XXX XXX XXX MVA
+Manage this booking: https://stayfjord-booking.example/r/SF-7741208
+You are receiving this email because you made a reservation on StayFjord.
+
+================================================================================
+===== POTWIERDZENIE 03 — WYNAJEM AUTA =====
+[CASE] wypożyczalnia, odbiór i zwrot na lotnisku, kaucja blokowana na karcie,
+       dodatki i ubezpieczenia osobno, warunki zimowe, sekcja "co zabrać",
+       tekst z artefaktami kodowania (=C3=B8 itp.) jak w realnych mailach
+Od: confirmations@nordvei-rental.example
+Do: biuro@biuro-przykladowe.example
+Temat: Booking confirmation NV-2027-114782 / Evenes Lufthavn / 12.02.2027
+Data: 5 November 2026, 09:41
+
+NORDVEI BILUTLEIE — RESERVATION CONFIRMATION
+Please present this confirmation and a valid driving licence at the desk.
+
+Booking number:      NV-2027-114782
+Confirmation code:   7QHD-2210
+Booked:              05.11.2026 09:41
+Main driver:         Kowalska 38
+Driving licence no.: (to be presented at pick-up)
+Company / invoice:   Biuro Przykladowe Kowalska 38,
+                     NIP PLXXXXXXXXXX
+
+PICK-UP
+  Location:  Evenes Lufthavn (EVE) — Arrivals hall, desk 2
+  Address:   Harstad/Narvik Lufthavn, 8484 Evenes, Norway
+  Date:      Thursday 12.02.2027, 13:00
+  Desk hours: 07:00-23:00. Flight number given at booking: SK 4094.
+  If your flight is delayed the desk will hold the car for 2 hours
+  after landing at no extra cost.
+
+RETURN
+  Location:  Evenes Lufthavn (EVE) — return parking P3, rows 11-14
+  Date:      Thursday 19.02.2027, 11:00
+  Key drop:  keybox at the desk if closed. Photograph the odometer
+             and the fuel gauge before leaving the vehicle.
+
+VEHICLE
+  Group:     SUV 9-seater / Group M — Mercedes-Benz Vito Tourer
+             or similar (automatic, diesel, 4x4)
+  Not guaranteed: exact model, colour. Guaranteed: seats, gearbox, 4x4.
+  Winter tyres with studs (piggdekk) fitted — included, mandatory
+  by law in this region in February.
+
+INCLUDED
+  Unlimited mileage                                     included
+  Second driver (Kowalska 1)                      included
+  Winter tyres / studded                                included
+  Roof rails                                            included
+  Collision damage waiver (CDW), excess NOK 15 000      included
+
+EXTRAS BOOKED
+  Excess reduction to NOK 3 000       7 days x NOK 185     NOK 1 295
+  Additional third driver                                  NOK   450
+  Snow chains (set)                                        NOK   300
+  Ski/equipment box, 450 l                                 NOK   980
+
+PRICE
+  Vehicle rental, 7 days                                   NOK 9 730
+  Extras (above)                                           NOK 3 025
+  Airport surcharge                                        NOK   490
+  Environmental fee                                        NOK   120
+  ---------------------------------------------------------------
+  ESTIMATED TOTAL                                         NOK 13 365
+  Prepaid                                                  NOK     0
+  Payable at pick-up                                      NOK 13 365
+
+DEPOSIT / SECURITY BLOCK
+  A deposit of NOK 15 000 will be blocked on the main driver's credit
+  card at pick-up. Debit cards are NOT accepted for the deposit.
+  The card must be in the main driver's name and must be a physical
+  card — Apple Pay / Google Pay cannot be used for the deposit.
+  Release of the block takes 5-10 working days after return.
+
+FUEL
+  Policy: full-to-full. The nearest station is Circle K Bj=C3=B8rkvik,
+  11 km from the airport. Refuelling by us: NOK 29/litre + NOK 450
+  service fee.
+
+WINTER DRIVING — PLEASE READ
+  Roads in Lofoten and Vester=C3=A5len can close at short notice.
+  Check vegvesen.no or call 175 before setting out. Driving on
+  unploughed private roads voids the damage waiver. Damage to the
+  underbody and to the windscreen from gravel/studs is NOT covered
+  by CDW unless glass cover is purchased (NOK 95/day, can be added
+  at the desk).
+  Animal collision (reindeer, elk) must be reported to the police
+  (112) immediately — failure to report voids the waiver entirely.
+
+CANCELLATION
+  Free of charge until 48 hours before pick-up. Later cancellation
+  or no-show: one day's rental charged.
+
+Modify or cancel: https://nordvei-rental.example/booking?ref=3DNV-2027-114782
+Questions: +47 xx xx xx xx, booking@nordvei-rental.example (Mon-Fri 08-16)
+
+Nordvei Bilutleie AS · Miasto: xxxxx · Org.nr XXX XXX XXX MVA
+This e-mail was generated automatically. Replies are not monitored.

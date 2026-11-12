@@ -1,0 +1,26 @@
+# rdzeń
+pyyaml>=6.0
+python-dotenv>=1.0
+pydantic>=2.7
+requests>=2.32
+numpy>=1.26
+
+# RAG — domyślnie embeddingi liczy Ollama (`ollama pull bge-m3`), więc tu nie ma
+# nic do instalowania. Poniższe dwie paczki są potrzebne TYLKO przy
+# `embeddingi.silnik: sentence_transformers`, czyli gdy chcesz polskiego
+# modelu mmlw. Ciągną kilka gigabajtów, a na Windowsie ze Smart App Control
+# natywna biblioteka paczki `regex` bywa zablokowana i import nie przechodzi.
+# sentence-transformers>=3.0
+# torch>=2.3
+
+# dokumenty
+docxtpl>=0.17
+python-docx>=1.1
+openpyxl>=3.1
+
+# panel okienkowy (skrypty/panel.py) używa tkintera, który jest częścią
+# Pythona — nic do instalowania
+
+# zrzut treści strony do bazy wiedzy
+beautifulsoup4>=4.12
+markdownify>=0.13

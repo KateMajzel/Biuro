@@ -1,0 +1,20 @@
+[
+ "faktura.nip",
+ "kontakt.email",
+ "kontakt.imie_nazwisko",
+ "kontakt.kraj",
+ "kontakt.organizacja",
+ "kontakt.telefon",
+ "uczestnicy[0].adres",
+ "uczestnicy[0].adres_kod_pocztowy",
+ "uczestnicy[0].dokument",
+ "uczestnicy[0].pesel",
+ "wyjazd.data_do",
+ "wyjazd.data_od",
+ "wyjazd.kierunek",
+ "wyjazd.termin_opis",
+ "wymagania.dieta",
+ "wymagania.inne_osoby",
+ "zgloszenie.budzet",
+ "zgloszenie.liczba_osob"
+]
